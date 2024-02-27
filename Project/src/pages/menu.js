@@ -4,6 +4,10 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import MenuItemContent from '../components/menuItemContent';
+
+import LasagnaImg from '../assets/lasagna.jpg';
+import ParmChicken from '../assets/parmChicken.jpg';
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -41,7 +45,6 @@ function a11yProps(index) {
 export default function Menu() {
   const [value, setValue] = React.useState(1);
   const [nestedValue, setNestedValue] = React.useState(0);
-
   const [nestedValueItemTwo, setNestedValueItemTwo] = React.useState(0);
 
   const [nestedValueItemThree, setNestedValueItemThree] = React.useState(0);
@@ -80,7 +83,23 @@ export default function Menu() {
           <Tab label="Soups" {...a11yProps(3)} />
         </Tabs>
         <CustomTabPanel value={nestedValue} index={0}>
-          Specials Content
+          <MenuItemContent
+            category="Specials"
+            items={[
+              {
+                name: "Lasagna",
+                price: "$12",
+                description: "Description of Lasagna",
+                image: LasagnaImg
+              },
+              {
+                name: "Chicken Parmesan",
+                price: "$16",
+                description: "Description of Chicken Parmesan",
+                image: ParmChicken
+              }
+            ]}
+          />
         </CustomTabPanel>
         <CustomTabPanel value={nestedValue} index={1}>
           Appetizers Content
