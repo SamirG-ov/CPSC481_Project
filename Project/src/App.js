@@ -10,6 +10,7 @@ import OrderCart from './pages/orderCart';
 import TrackOrder from './pages/trackOrder';
 import Payment from './pages/payment';
 import Feedback from './pages/feedback';
+import FloatingButton from './components/floatingButton';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path='/payment' element={<Payment/>} />
           <Route path='/feedback' element={<Feedback/>} />
         </Routes>
+        <FloatingButton />
       </Router>
     </div>
   );
