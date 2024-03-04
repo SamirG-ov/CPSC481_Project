@@ -73,6 +73,9 @@ const OrderCart = () => {
 
       {/* Back button to navigate back to the menu page */}
       <Link to="/menu">Back to Menu</Link>
+      <Link to="/trackOrder">
+        <button>Track Order</button>
+      </Link>
     </div>
   );
 };

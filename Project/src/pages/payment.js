@@ -11,8 +11,9 @@ const Payment = () => {
     <div>
       <h1>Payment</h1>
       <p>Total Price: ${totalPrice}</p>
-      {/* Back button to navigate back to the order cart */}
-      <Link to="/ordercart">Back to Order Cart</Link>
+      <Link to="/feedback">
+        <button>Give us your feedback</button>
+      </Link>
     </div>
   );
 };
