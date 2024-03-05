@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import "../styles/orderCart.css";
 
@@ -171,7 +171,8 @@ const OrderCart = () => {
             <button
               type="button"
               className="order-button"
-              onClick={() => handlePayBill()}
+              // onClick={() => handlePayBill()
+              onClick={() => navigate("/trackOrder")}
             >
               Place Order
             </button>
