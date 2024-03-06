@@ -13,7 +13,7 @@ import ParmChicken from "../assets/parmChicken.jpg";
 import Nachos from "../assets/nachos.jpg";
 import ChickenWings from "../assets/chickenWings.jpg";
 import Spaghetti from "../assets/spaghetti.jpg";
-import CokeImg from "../assets/coke.jpg";
+// import CokeImg from "../assets/coke.jpg";
 
 // import LasagnaImg from '../assets/lasagna.jpg';
 import MeatRavioli from "../assets/meatRavioli.jpg";
