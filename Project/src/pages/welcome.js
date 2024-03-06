@@ -16,8 +16,8 @@ const Welcome = () => {
         <Link to="/menu" style={{ marginRight: '20px', textDecoration: 'none' }}>
           <button style={{ padding: '10px 20px', fontSize: '16px' }}>Start Ordering</button>
         </Link>
-        <Link to="/assistance" style={{ textDecoration: 'none' }}>
-          <button style={{ padding: '10px 20px', fontSize: '16px' }}>Look at the basic menu</button>
+        <Link to="/menu" style={{ textDecoration: 'none' }}>
+          <button style={{ padding: '10px 20px', fontSize: '16px' }}>I am new here !</button>
         </Link>
       </div>
       <button onClick={handleCallForAssistance} style={{ padding: '10px 20px', fontSize: '16px', marginTop: '50px' }}>Call for assistance</button>

@@ -103,7 +103,8 @@ export default function Menu() {
             <Tab className="tab" label="Lunch" {...a11yProps(1)} />
             <Tab className="tab" label="Dinner" {...a11yProps(2)} />
             <Tab className="tab" label="Drinks" {...a11yProps(3)} />
-            <Tab className="tab" sx={{marginLeft: 'auto'}}label="Feedback" {...a11yProps(4)} />
+            <Tab className="tab" label="Recommendations" {...a11yProps(4)} />
+            <Tab className="tab" sx={{marginLeft: 'auto'}}label="Feedback" {...a11yProps(5)} />
           </Tabs>
         </Box>
       </header>
@@ -276,6 +277,9 @@ export default function Menu() {
         </CustomTabPanel>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={3}>
+      recommendations
+      </CustomTabPanel>
+      <CustomTabPanel value={value} index={4}>
       <Feedback/>
       </CustomTabPanel>
       <footer style={{ paddingBottom: "100px" }} />
