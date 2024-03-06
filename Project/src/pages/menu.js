@@ -98,7 +98,7 @@ export default function Menu() {
             value={value}
             onChange={handleChange}
             aria-label="basic tabs example"
-            TabIndicatorProps={{ style: { backgroundColor: "#32cd32" } }}
+            TabIndicatorProps={{ style: { backgroundColor: "#148014" } }}
           >
             <Tab className="tab" label="Lunch" {...a11yProps(1)} />
             <Tab className="tab" label="Dinner" {...a11yProps(2)} />
@@ -113,7 +113,7 @@ export default function Menu() {
           value={nestedValue}
           onChange={handleNestedChange}
           aria-label=""
-          TabIndicatorProps={{ style: { backgroundColor: "#32cd32" } }}
+          TabIndicatorProps={{ style: { backgroundColor: "#148014" } }}
         >
           <Tab className="sub-tab" label="Specials" {...a11yProps(0)} />
           <Tab className="sub-tab" label="Appetizers" {...a11yProps(1)} />
@@ -233,7 +233,7 @@ export default function Menu() {
           value={nestedValueItemTwo}
           onChange={handleNestedChangeItemTwo}
           aria-label=""
-          TabIndicatorProps={{ style: { backgroundColor: "#32cd32" } }}
+          TabIndicatorProps={{ style: { backgroundColor: "#148014" } }}
         >
           <Tab className="sub-tab" label="Specials" {...a11yProps(0)} />
           <Tab className="sub-tab" label="Appetizers" {...a11yProps(1)} />
@@ -262,7 +262,7 @@ export default function Menu() {
           value={nestedValueItemThree}
           onChange={handleNestedChangeItemThree}
           aria-label=""
-          TabIndicatorProps={{ style: { backgroundColor: "#32cd32" } }}
+          TabIndicatorProps={{ style: { backgroundColor: "#148014" } }}
         >
           <Tab className="sub-tab" label="Non-Alcoholic" {...a11yProps(0)} />
           <Tab className="sub-tab" label="Alcoholic" {...a11yProps(1)} />

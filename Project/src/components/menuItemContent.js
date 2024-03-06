@@ -35,7 +35,7 @@ const MenuItemContent = ({ category, items }) => {
   //           <img src={item.image} alt={item.name} />
   //         </div>
   //         <div className="menu-item-details">
-  //           <h3 style={{ color: "#32cd32" }}>{item.name}</h3>
+  //           <h3 style={{ color: "#148014" }}>{item.name}</h3>
   //           <p>{item.description}</p>
   //           <p>{item.price}.00</p>
   //         </div>
@@ -140,7 +140,7 @@ const MenuItemContent = ({ category, items }) => {
               <img src={item.image} alt={item.name} />
             </div>
             <div className="menu-item-details">
-              <h3 style={{ color: "#32cd32" }}>{item.name}</h3>
+              <h3 style={{ color: "#148014" }}>{item.name}</h3>
               <p>{item.description}</p>
               <p>{item.price}.00</p>
             </div>
