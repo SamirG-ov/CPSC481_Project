@@ -12,6 +12,7 @@ import Payment from "./pages/payment";
 import Feedback from "./pages/feedback";
 import PayBill from "./pages/payBill";
 import TipOptions from './pages/tipOptions';
+import CashPay from "./pages/cashPay";
 import FloatingButton from "./components/floatingButton";
 import AssistanceButton from "./components/assistanceButton";
 
@@ -31,6 +32,8 @@ function App() {
           <Route path="/feedback" element={<Feedback />} />
           <Route path="/payBill" element={<PayBill />} />
           <Route path='/tipOptions' element={<TipOptions/>} />
+          <Route path='/cashPay' element={<CashPay/>} />
+
         </Routes>
         <footer
           style={{
