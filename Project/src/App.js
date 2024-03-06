@@ -10,6 +10,7 @@ import OrderCart from "./pages/orderCart";
 import TrackOrder from "./pages/trackOrder";
 import Payment from "./pages/payment";
 import Feedback from "./pages/feedback";
+import PayBill from "./pages/payBill";
 import FloatingButton from "./components/floatingButton";
 import AssistanceButton from "./components/assistanceButton";
 
@@ -18,16 +19,16 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route exact path='/' element={<Home/>} />
-          <Route path='/welcome' element={<Welcome/>} />
-          <Route path='/assistance' element={<Assistance/>} />
-          <Route path='/menu' element={<Menu/>} />
-          <Route path="/item/:itemName" element={<ItemPage/>} />
-          <Route path='/orderCart' element={<OrderCart/>} />
-          <Route path='/trackOrder' element={<TrackOrder/>} />
-          <Route path='/payment' element={<Payment/>} />
-          <Route path='/feedback' element={<Feedback/>} />
-          <Route path='/payBill' element={<PayBill/>} />
+          <Route exact path="/" element={<Home />} />
+          <Route path="/welcome" element={<Welcome />} />
+          <Route path="/assistance" element={<Assistance />} />
+          <Route path="/menu" element={<Menu />} />
+          <Route path="/item/:itemName" element={<ItemPage />} />
+          <Route path="/orderCart" element={<OrderCart />} />
+          <Route path="/trackOrder" element={<TrackOrder />} />
+          <Route path="/payment" element={<Payment />} />
+          <Route path="/feedback" element={<Feedback />} />
+          <Route path="/payBill" element={<PayBill />} />
         </Routes>
         <footer style={{ position: "fixed", bottom: "0", width: "100%" }}>
           <FloatingButton />
