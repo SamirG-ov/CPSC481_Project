@@ -30,9 +30,12 @@ const OrderCart = () => {
     );
   };
 
-  const handlePayBill = () => {
-    // Navigate to the payment page with total price as a query parameter
-    navigate(`/payment?totalPrice=${totalPrice}`);
+  const handleBackToMenu = () => {
+    navigate("/menu");
+  };
+
+  const handleTrackOrder = () => {
+    navigate("/trackOrder");
   };
 
   return (
@@ -74,7 +77,12 @@ const OrderCart = () => {
                   className="item-image"
                 />
                 <h3 className="item-title">{cartItem.item.name}</h3>
-                <p className="item-price">{cartItem.item.price}.00</p>
+                <p className="item-price">
+                  $
+                  {parseFloat(cartItem.item.price.replace("$", "")) *
+                    cartItem.quantity}
+                  .00
+                </p>
               </div>
               <div className="item-details">
                 <div className="item-quantity">
@@ -119,7 +127,6 @@ const OrderCart = () => {
                     </button>
                   </div>
                 </div>
-                {/* Textarea for special notes */}
 
                 <label
                   style={{
@@ -164,15 +171,14 @@ const OrderCart = () => {
             <button
               type="button"
               className="back-button"
-              onClick={() => navigate("/menu")}
+              onClick={() => handleBackToMenu()}
             >
               Continue Browsing
             </button>
             <button
               type="button"
               className="order-button"
-              // onClick={() => handlePayBill()
-              onClick={() => navigate("/trackOrder")}
+              onClick={() => handleTrackOrder()}
             >
               Place Order
             </button>
