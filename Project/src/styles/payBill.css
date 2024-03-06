@@ -1,0 +1,23 @@
+.pay-button {
+  margin: 10px;
+  cursor: pointer;
+  background-color: gray;
+  border: 2px solid gray;
+  width: 300px;
+  height: 110px;
+  color: white;
+}
+
+.button-holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.text-holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}

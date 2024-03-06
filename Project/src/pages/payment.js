@@ -58,8 +58,7 @@ const Payment = () => {
             <button
               type="button"
               className="pay-button"
-              // onClick={() => handlePayBill()
-              onClick={() => navigate("/trackOrder")}
+              onClick={() => navigate("/payBill")}
             >
               Pay Bill
             </button>
@@ -67,16 +66,6 @@ const Payment = () => {
         )}
       </div>
 </div>
-
-
-
-    // <div>
-    //   <h1>Payment</h1>
-    //   <p>Total Price: ${totalPrice}</p>
-    //   <Link to="/feedback">
-    //     <button>Give us your feedback</button>
-    //   </Link>
-    // </div>
   );
 };
 
