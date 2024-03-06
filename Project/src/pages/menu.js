@@ -51,7 +51,7 @@ function a11yProps(index) {
 
 export default function Menu() {
   const navigate = useNavigate();
-  const [value, setValue] = React.useState(1);
+  const [value, setValue] = React.useState(0);
   const [nestedValue, setNestedValue] = React.useState(0);
   const [nestedValueItemTwo, setNestedValueItemTwo] = React.useState(0);
 
@@ -123,11 +123,12 @@ export default function Menu() {
             <Tab className="tab" label="Lunch" {...a11yProps(1)} />
             <Tab className="tab" label="Dinner" {...a11yProps(2)} />
             <Tab className="tab" label="Drinks" {...a11yProps(3)} />
+            <Tab className="tab" sx={{marginLeft: 'auto'}}label="Feedback" {...a11yProps(4)} />
           </Tabs>
         </Box>
       </header>
 
-      <CustomTabPanel value={value} index={1}>
+      <CustomTabPanel value={value} index={0}>
         <Tabs
           value={nestedValue}
           onChange={handleNestedChange}
@@ -138,6 +139,7 @@ export default function Menu() {
           <Tab className="sub-tab" label="Appetizers" {...a11yProps(1)} />
           <Tab className="sub-tab" label="Entrees" {...a11yProps(2)} />
           <Tab className="sub-tab" label="Soups" {...a11yProps(3)} />
+          
         </Tabs>
 
         <CustomTabPanel value={nestedValue} index={0}>
@@ -234,7 +236,7 @@ export default function Menu() {
           Soups Content
         </CustomTabPanel>
       </CustomTabPanel>
-      <CustomTabPanel value={value} index={2}>
+      <CustomTabPanel value={value} index={1}>
         <Tabs
           value={nestedValueItemTwo}
           onChange={handleNestedChangeItemTwo}
@@ -259,7 +261,7 @@ export default function Menu() {
           Deserts Content
         </CustomTabPanel>
       </CustomTabPanel>
-      <CustomTabPanel value={value} index={3}>
+      <CustomTabPanel value={value} index={2}>
         <Tabs
           value={nestedValueItemThree}
           onChange={handleNestedChangeItemThree}
@@ -276,8 +278,8 @@ export default function Menu() {
           Alcoholic Content
         </CustomTabPanel>
       </CustomTabPanel>
-      <CustomTabPanel value={value} index={4}>
-        <Feedback/>
+      <CustomTabPanel value={value} index={3}>
+      <Feedback/>
       </CustomTabPanel>
     </div>
   );
