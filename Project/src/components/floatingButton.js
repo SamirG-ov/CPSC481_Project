@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-// import Fab from "@mui/material/Fab";
 
 const FloatingButton = () => {
   const location = useLocation();
@@ -10,18 +9,22 @@ const FloatingButton = () => {
   const isMenuPage = location.pathname === "/menu";
 
   return isMenuPage ? (
-    // <Link to="/orderCart" style={{ position: 'fixed', bottom: '20px', right: '20px', zIndex: '1000' }}>
-    //   <Fab color="primary" aria-label="view-cart">
-    //     View Cart
-    //   </Fab>
-    // </Link>
-    <button
-      type="button"
-      className="view-cart"
-      onClick={() => navigate("orderCart")}
-    >
-      View Cart
-    </button>
+    <div style={{ display: "flex", flexDirection: "row" }}>
+      <button
+        type="button"
+        className="view-cart"
+        onClick={() => navigate("orderCart")}
+      >
+        View Cart
+      </button>
+      <button
+        type="button"
+        className="view-cart"
+        onClick={() => navigate("trackOrder")}
+      >
+        Track Order
+      </button>
+    </div>
   ) : null;
 };
 

@@ -5,7 +5,8 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import MenuItemContent from "../components/menuItemContent";
+// import MenuItemContent from "../components/menuItemContent";
+import AssistanceButton from "../components/assistanceButton";
 import "../styles/menu.css";
 
 import LasagnaImg from "../assets/lasagna.jpg";
@@ -162,10 +163,10 @@ export default function Menu() {
                   <p>{item.description}</p>
                   <p>{item.price}.00</p>
                 </div>
-                <div>
+                <div className="add-to-cart">
                   <button
                     type="button"
-                    className="add-to-cart"
+                    className="add-to-cart-button"
                     onClick={() =>
                       navigate(`/item/${item.name}`, { state: { item } })
                     }
