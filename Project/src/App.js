@@ -30,7 +30,14 @@ function App() {
           <Route path="/feedback" element={<Feedback />} />
           <Route path="/payBill" element={<PayBill />} />
         </Routes>
-        <footer style={{ position: "fixed", bottom: "0", width: "100%" }}>
+        <footer
+          style={{
+            position: "fixed",
+            bottom: "0",
+            width: "100%",
+            backgroundColor: "white",
+          }}
+        >
           <FloatingButton />
           <AssistanceButton />
         </footer>

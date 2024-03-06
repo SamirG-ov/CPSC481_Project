@@ -16,10 +16,10 @@ import Spaghetti from "../assets/spaghetti.jpg";
 import CokeImg from "../assets/coke.jpg";
 
 // import LasagnaImg from '../assets/lasagna.jpg';
-// import MeatRavioli from '../assets/meatRavioli.jpg';
-// import Cacciatora from '../assets/Cacciatora.jpg';
+import MeatRavioli from "../assets/meatRavioli.jpg";
+import Cacciatora from "../assets/Cacciatora.jpg";
 // import ParmChicken from '../assets/parmChicken.jpg';
-// import Risotto from '../assets/Risotto.jpeg';
+import Risotto from "../assets/Risotto.jpeg";
 
 import Feedback from "./feedback";
 
@@ -106,7 +106,6 @@ export default function Menu() {
           </Tabs>
         </Box>
       </header>
-
       <CustomTabPanel value={value} index={0}>
         <Tabs
           value={nestedValue}
@@ -127,10 +126,7 @@ export default function Menu() {
               {
                 name: "Lasagna",
                 price: "$12",
-                // description:
-                //   "Layers of delicate pasta sheets smothered in rich marinara sauce, creamy ricotta cheese, and savory ground beef, all topped with a blanket of gooey melted mozzarella. Served with garlic bread.",
-                // image: LasagnaImg,
-                // className: "menu-item",
+                className: "menu-item",
                 description: "Click for more information",
                 image: LasagnaImg,
                 // destination: "feedback",
@@ -140,13 +136,7 @@ export default function Menu() {
               {
                 name: "Chicken Parmesan",
                 price: "$16",
-                //       description:
-                //         "Tender, juicy chicken breast breaded and fried to perfection, then smothered in rich marinara sauce and melted mozzarella cheese. Served with a side of spaghetti.",
-                //       image: ParmChicken,
-                //       className: "menu-item",
-                //     },
-                //   ]}
-                // />
+                className: "menu-item",
                 description: "Click for more information",
                 image: ParmChicken,
                 description2:
@@ -155,6 +145,7 @@ export default function Menu() {
               {
                 name: "Meat Raviolli",
                 price: "$18",
+                className: "menu-item",
                 description: "Click for more information",
                 image: MeatRavioli,
                 description2:
@@ -163,6 +154,7 @@ export default function Menu() {
               {
                 name: "Risotto",
                 price: "$16",
+                className: "menu-item",
                 description: "Click for more information",
                 image: Risotto,
                 description2:
@@ -171,6 +163,7 @@ export default function Menu() {
               {
                 name: "Cacciatora",
                 price: "$15",
+                className: "menu-item",
                 description: "Click for more information",
                 image: Cacciatora,
                 description2:
@@ -232,7 +225,6 @@ export default function Menu() {
           <MenuItemContent category="Soups" items={[]} />
         </CustomTabPanel>
       </CustomTabPanel>
-
       <CustomTabPanel value={value} index={1}>
         <Tabs
           value={nestedValueItemTwo}
@@ -262,7 +254,6 @@ export default function Menu() {
           <MenuItemContent category="Desserts" items={[]} />
         </CustomTabPanel>
       </CustomTabPanel>
-
       <CustomTabPanel value={value} index={2}>
         <Tabs
           value={nestedValueItemThree}
@@ -285,6 +276,7 @@ export default function Menu() {
       <CustomTabPanel value={value} index={4}>
         <Feedback />
       </CustomTabPanel>
+      <footer style={{ paddingBottom: "100px" }} />
     </div>
   );
 }
