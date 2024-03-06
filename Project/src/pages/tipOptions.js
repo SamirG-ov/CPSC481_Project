@@ -48,7 +48,7 @@ const TipOptions = () => {
     <button
               type="button"
               className="apply-button"
-              onClick={() => navigate("/cashPay")}
+              onClick={() => navigate("/cardPay")}
             >
               Apply
             </button>
