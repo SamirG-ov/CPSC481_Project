@@ -1,31 +1,54 @@
-import React from 'react';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const MenuItemContent = ({ category, items }) => {
   const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = React.useState("");
 
   const handleAddItemClick = (item) => {
     navigate(`/item/${item.name}`, { state: { item } });
   };
 
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+    // Add your search logic here
+  };
+
   return (
     <div>
-      <Typography variant="h5">{category}</Typography>
-      <ul style={{ listStylePosition: 'inside', paddingInlineStart: 0 }}>
-        {items.map((item, index) => (
-          <li key={index} style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
-          {item.image && <img src={item.image} alt={item.name} style={{ marginRight: '10px', width: '100px', height: '100px', objectFit: 'cover' }} />}
-            <div style={{flex:1}}>
-              <Typography variant="h6">{item.name}</Typography>
-              <Typography variant="subtitle1">{item.price}</Typography>
-              <Typography variant="body2">{item.description}</Typography>
+      <div>
+        <div className="search">
+          <h2>{category}</h2>
+          <input
+            type="search"
+            placeholder="Search"
+            value={searchTerm}
+            onChange={handleSearchChange}
+          />
+        </div>
+
+        {items.map((item) => (
+          <div key={item.name} className={item.className} style={item.style}>
+            <div>
+              <img src={item.image} alt={item.name} />
             </div>
-            <Button variant="contained" onClick={() => handleAddItemClick(item)}>Add</Button>
-          </li>
+            <div className="menu-item-details">
+              <h3 style={{ color: "#32cd32" }}>{item.name}</h3>
+              <p>{item.description}</p>
+              <p>{item.price}.00</p>
+            </div>
+            <div className="add-to-cart">
+              <button
+                type="button"
+                className="add-to-cart-button"
+                onClick={() => handleAddItemClick(item)}
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
