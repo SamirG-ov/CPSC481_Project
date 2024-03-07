@@ -23,14 +23,14 @@ const PayBill = () => {
   </header>
   <div style={{ "font-weight": "bold" }} className = "text-holder">Accepted Forms of Payment</div>
   <div className = "button-holder">
-    <button class = "pay-button">Visa</button>
-    <button class = "pay-button">MasterCard</button>
+    <button class = "pay-button" onClick={() => navigate("/tipOptions")}>Visa</button>
+    <button class = "pay-button" onClick={() => navigate("/tipOptions")}>MasterCard</button>
   </div>
   <div className = "button-holder">
-  <button class = "pay-button">Debit</button>
-  <button class = "pay-button">Cash</button>
+  <button class = "pay-button" onClick={() => navigate("/tipOptions")}>Debit</button>
+  <button class = "pay-button" onClick={() => navigate("/cashPay")}>Cash</button>
   </div>
-  <div class = "button-holder"><button class = "pay-button">Gift Card</button></div>
+  <div class = "button-holder" onClick={() => navigate("/tipOptions")}><button class = "pay-button">Gift Card</button></div>
 
 </div>
   );

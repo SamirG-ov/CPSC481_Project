@@ -13,7 +13,7 @@ import ParmChicken from "../assets/parmChicken.jpg";
 import Nachos from "../assets/nachos.jpg";
 import ChickenWings from "../assets/chickenWings.jpg";
 import Spaghetti from "../assets/spaghetti.jpg";
-import CokeImg from "../assets/coke.jpg";
+// import CokeImg from "../assets/coke.jpg";
 
 // import LasagnaImg from '../assets/lasagna.jpg';
 import MeatRavioli from "../assets/meatRavioli.jpg";
@@ -58,7 +58,7 @@ function a11yProps(index) {
 
 export default function Menu() {
   const navigate = useNavigate();
-  const [value, setValue] = React.useState(1);
+  const [value, setValue] = React.useState(0);
   const [nestedValue, setNestedValue] = React.useState(0);
   const [nestedValueItemTwo, setNestedValueItemTwo] = React.useState(0);
 
@@ -98,11 +98,13 @@ export default function Menu() {
             value={value}
             onChange={handleChange}
             aria-label="basic tabs example"
-            TabIndicatorProps={{ style: { backgroundColor: "#32cd32" } }}
+            TabIndicatorProps={{ style: { backgroundColor: "#148014" } }}
           >
             <Tab className="tab" label="Lunch" {...a11yProps(1)} />
             <Tab className="tab" label="Dinner" {...a11yProps(2)} />
             <Tab className="tab" label="Drinks" {...a11yProps(3)} />
+            <Tab className="tab" label="Recommendations" {...a11yProps(4)} />
+            <Tab className="tab" sx={{marginLeft: 'auto'}}label="Feedback" {...a11yProps(5)} />
           </Tabs>
         </Box>
       </header>
@@ -111,12 +113,13 @@ export default function Menu() {
           value={nestedValue}
           onChange={handleNestedChange}
           aria-label=""
-          TabIndicatorProps={{ style: { backgroundColor: "#32cd32" } }}
+          TabIndicatorProps={{ style: { backgroundColor: "#148014" } }}
         >
           <Tab className="sub-tab" label="Specials" {...a11yProps(0)} />
           <Tab className="sub-tab" label="Appetizers" {...a11yProps(1)} />
           <Tab className="sub-tab" label="Entrees" {...a11yProps(2)} />
           <Tab className="sub-tab" label="Soups" {...a11yProps(3)} />
+          
         </Tabs>
 
         <CustomTabPanel value={nestedValue} index={0}>
@@ -234,7 +237,7 @@ export default function Menu() {
           value={nestedValueItemTwo}
           onChange={handleNestedChangeItemTwo}
           aria-label=""
-          TabIndicatorProps={{ style: { backgroundColor: "#32cd32" } }}
+          TabIndicatorProps={{ style: { backgroundColor: "#148014" } }}
         >
           <Tab className="sub-tab" label="Specials" {...a11yProps(0)} />
           <Tab className="sub-tab" label="Appetizers" {...a11yProps(1)} />
@@ -263,7 +266,7 @@ export default function Menu() {
           value={nestedValueItemThree}
           onChange={handleNestedChangeItemThree}
           aria-label=""
-          TabIndicatorProps={{ style: { backgroundColor: "#32cd32" } }}
+          TabIndicatorProps={{ style: { backgroundColor: "#148014" } }}
         >
           <Tab className="sub-tab" label="Non-Alcoholic" {...a11yProps(0)} />
           <Tab className="sub-tab" label="Alcoholic" {...a11yProps(1)} />
@@ -277,8 +280,11 @@ export default function Menu() {
           <MenuItemContent category="Alcoholic" items={[]} />
         </CustomTabPanel>
       </CustomTabPanel>
+      <CustomTabPanel value={value} index={3}>
+      recommendations
+      </CustomTabPanel>
       <CustomTabPanel value={value} index={4}>
-        <Feedback />
+      <Feedback/>
       </CustomTabPanel>
       <footer style={{ paddingBottom: "100px" }} />
     </div>
