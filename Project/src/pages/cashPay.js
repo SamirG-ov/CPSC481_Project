@@ -22,6 +22,7 @@ const CashPay = () => {
 <div>
   <header class="displayLogo">
     <div className="mainLogo">
+    <div style={{paddingLeft: "500%"}}><button className = "back">↩️</button></div>
       <h1>
         <span style={{ color: "red" }}>X</span>
         <span style={{ color: "blue" }}>Y</span>

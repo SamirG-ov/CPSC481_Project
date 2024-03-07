@@ -32,6 +32,7 @@ const Payment = () => {
           <p>Since 2015</p>
         </div>
         <h1 className="title">Order Summary</h1>
+        <button className = "back">↩️</button>
       </header>
       <div className="cart-item">
         <h3 className="item-title" style={{ color: "black" }}>

@@ -19,18 +19,19 @@ const PayBill = () => {
       </h1>
       <p>Since 2015</p>
     </div>
-    <h1 className="title">PayBill</h1>
+    <h1 className="title">Pay Bill</h1>
+    <button className = "back">↩️</button>
   </header>
   <div style={{ "font-weight": "bold" }} className = "text-holder">Accepted Forms of Payment</div>
   <div className = "button-holder">
-    <button class = "pay-button" onClick={() => navigate("/tipOptions")}>Visa</button>
-    <button class = "pay-button" onClick={() => navigate("/tipOptions")}>MasterCard</button>
+    <button class = "pay-button2" onClick={() => navigate("/tipOptions")}>Visa</button>
+    <button class = "pay-button2" onClick={() => navigate("/tipOptions")}>MasterCard</button>
   </div>
   <div className = "button-holder">
-  <button class = "pay-button" onClick={() => navigate("/tipOptions")}>Debit</button>
-  <button class = "pay-button" onClick={() => navigate("/cashPay")}>Cash</button>
+  <button class = "pay-button2" onClick={() => navigate("/tipOptions")}>Debit</button>
+  <button class = "pay-button2" onClick={() => navigate("/cashPay")}>Cash</button>
   </div>
-  <div class = "button-holder" onClick={() => navigate("/tipOptions")}><button class = "pay-button">Gift Card</button></div>
+  <div class = "button-holder" onClick={() => navigate("/tipOptions")}><button class = "pay-button2">Gift Card</button></div>
 
 </div>
   );

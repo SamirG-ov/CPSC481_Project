@@ -30,6 +30,7 @@ const TipOptions = () => {
       <p>Since 2015</p>
     </div>
     <h1 className="title">Add a Tip</h1>
+    <button className = "quantity-button">↩️</button>
   </header>
   <div style={{ "font-weight": "bold" }} className = "text-holder">Total: ${totalPrice.toFixed(2)}</div>
   <div className = "button-holder">
