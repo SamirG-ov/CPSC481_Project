@@ -68,16 +68,18 @@ const Welcome = () => {
       display: flex;
       justify-content: center;
       margin-top: 50px; /* Adjust spacing between buttons */
+      
     }
     .button-container button {
       padding: 15px 30px; /* Adjust button padding */
-      font-size: 24px; /* Adjust font size */
-      background-color: transparent; /* Make background transparent */
+      font-size: 34px; /* Adjust font size */
+      background-color: rgba(255, 255, 255, 0.5); /* Make background transparent */
       border: 2px solid #fff; /* Add border */
-      color: #fff; /* Set font color */
+      color: #AE1818; /* Set font color */
       cursor: pointer; /* Add cursor pointer */
       transition: background-color 0.3s ease, color 0.3s ease; /* Add smooth transition */
       margin: 0 10px; /* Adjust spacing between buttons */
+      font-family: 'Abril Fatface', cursive;
     }
 
     .button-container button:hover {
@@ -92,16 +94,6 @@ const Welcome = () => {
       <div className="welcome-page">
         <div className="background-image"></div> {/* Background Image */}
         <div className="content">
-          {/* <header>
-            <div>
-              <h1>
-                <span style={{ color: "red" }}>X</span>
-                <span style={{ color: "blue" }}>Y</span>
-                <span style={{ color: "green" }}>Z</span> Bistro
-              </h1>
-              <p style={{textAlign : 'center'}}>Since 2015</p>
-            </div>
-          </header> */}
           <h1>Welcome to </h1>
           <div>
               <h2>
@@ -116,14 +108,14 @@ const Welcome = () => {
             </div>
             <div className="button-container">
             
-            <Link to="/menu" style={{ textDecoration: 'none' }}>
+            <Link to="/menu">
               <button>I am new here!</button>
             </Link>
-            <Link to="/menu" style={{ textDecoration: 'none' }}>
+            <Link to="/menu">
               <button>I know my way around!</button>
             </Link>
             
-            <Link to="/assistance" style={{ textDecoration: 'none', color: 'red' }}>
+            <Link to="/assistance">
               <button>Call for assistance</button>
             </Link>
             </div>
