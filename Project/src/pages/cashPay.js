@@ -35,7 +35,7 @@ const CashPay = () => {
     <p className ="total-price">Total: ${totalPrice.toFixed(2)}</p>
   </div>
 
-  <div className = "textHolder">
+  <div className = "textHold">
     <p className = "textBox">Assistance will be with you shortly to take your cash payment.</p>
   </div>
 
