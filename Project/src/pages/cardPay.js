@@ -36,7 +36,7 @@ const CardPay = () => {
     <p className ="total-price">Total: ${totalPrice.toFixed(2)}</p>
   </div>
 
-  <div className = "textHolder">
+  <div className = "textHold">
     <p className = "payText">Insert, Swipe or Tap</p>
   </div>
 
