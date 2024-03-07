@@ -2,9 +2,9 @@ import React from 'react';
 import { useNavigate } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
 import { useState } from "react";
-import "../styles/cashPay.css";
+import "../styles/paymentComplete.css";
 
-const CashPay = () => {
+const PaymentComplete = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const searchParams = new URLSearchParams(location.search);
@@ -35,18 +35,24 @@ const CashPay = () => {
     <p className ="total-price">Total: ${totalPrice.toFixed(2)}</p>
   </div>
 
+<div className = "holderHolder">
   <div className = "textHolder">
-    <p className = "textBox">Assistance will be with you shortly to take your cash payment.</p>
+    <p className = "thanksText">Thank You</p>
+    <p className= "thanksText">for dining with us!</p>
   </div>
+</div>
 
-  <div className="footer">
+    <p className = "thanksTextUnderLine">See you again soon!</p>
+
+
+  <div className="foot">
           <div>
             <button
               type="button"
-              className="pay-button"
-              onClick={() => navigate("/paymentComplete")}
+              className="feedback-button"
+              onClick={() => navigate("/feedback")}
             >
-              Payment Complete
+              Tell us how we did
             </button>
           </div>
       </div>
@@ -54,4 +60,4 @@ const CashPay = () => {
   );
 };
 
-export default CashPay;
+export default PaymentComplete;
