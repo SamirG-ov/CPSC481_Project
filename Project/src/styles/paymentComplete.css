@@ -31,18 +31,14 @@
     justify-content: center;
     margin: 10px;
     font-size: 40px;
-  }
-
-  .textHolder {
-    padding-left: 20%;
-    padding-right:20%;
     border: 2px solid green;
   }
 
-  .holderHolder {
+  .textHolder {
     padding-left: 30%;
     padding-right:30%;
   }
+
 
   .feedback-button {
     margin: 10px;

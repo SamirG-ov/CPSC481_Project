@@ -35,11 +35,8 @@ const PaymentComplete = () => {
     <p className ="total-price">Total: ${totalPrice.toFixed(2)}</p>
   </div>
 
-<div className = "holderHolder">
   <div className = "textHolder">
-    <p className = "thanksText">Thank You</p>
-    <p className= "thanksText"> for dining with us!</p>
-  </div>
+    <p className = "thanksText">Thank You for dining with us!</p>
 </div>
 
     <p className = "thanksTextUnderLine"> See you again soon!</p>
