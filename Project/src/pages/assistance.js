@@ -22,7 +22,7 @@ const Assistance = () => {
       </div>
       <footer style= {{ textAlign: 'center', paddingBottom: '20px' }}>
         <Link to="/welcome" stlye={{textDecoration: 'none' }}>
-          <button style={{padding: '20px 30px', fontSize: '16px', marginTop: '200px', backgroundColor: '#FFFF8F', color: 'red'}}>X CANCEL REQUEST X</button>
+          <button style={{padding: '20px 30px', fontSize: '16px', marginTop: '150px', backgroundColor: '#FFFF8F', color: 'red'}}>X CANCEL REQUEST X</button>
         </Link>
       </footer>
     </div>
