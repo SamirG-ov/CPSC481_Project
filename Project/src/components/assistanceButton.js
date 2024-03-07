@@ -5,14 +5,19 @@ const AssistanceButton = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const isAllPages = location.pathname !== "/assistance";
+  const isNotAssistancePage = location.pathname !== "/assistance";
+  const isNotWelcomePage = location.pathname !== "/welcome";
 
   const handleClick = () => {
     navigate("/assistance");
   };
 
-  return isAllPages ? (
-    <button type="button" className="view-cart assistance-button" onClick={() => handleClick()}>
+  return isNotAssistancePage && isNotWelcomePage ? (
+    <button
+      type="button"
+      className="view-cart assistance-button"
+      onClick={() => handleClick()}
+    >
       Call Assistance
     </button>
   ) : null;
