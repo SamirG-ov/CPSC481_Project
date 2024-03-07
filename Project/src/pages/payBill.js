@@ -28,7 +28,7 @@ const PayBill = () => {
   </div>
   <div className = "button-holder">
   <button class = "pay-button" onClick={() => navigate("/tipOptions")}>Debit</button>
-  <button class = "pay-button" >Cash</button>
+  <button class = "pay-button" onClick={() => navigate("/cashPay")}>Cash</button>
   </div>
   <div class = "button-holder" onClick={() => navigate("/tipOptions")}><button class = "pay-button">Gift Card</button></div>
 
