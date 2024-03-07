@@ -39,7 +39,6 @@ const ItemPage = () => {
 
   return (
     <div>
-      {/* <div> */}
       <header
         style={{
           display: "flex",
@@ -48,28 +47,7 @@ const ItemPage = () => {
           height: "400px",
           backgroundImage: `url(${item.image})`,
         }}
-      >
-        {/* <div>
-            <h1>
-              <span style={{ color: "red" }}>X</span>
-              <span style={{ color: "blue" }}>Y</span>
-              <span style={{ color: "green" }}>Z</span> Bistro
-            </h1>
-            <p style={{ textAlign: "center" }}>Since 2015</p>
-          </div> */}
-        {/* <div> */}
-        {/* {item.image && (
-          <img style={{ width: "100%", height: "100%", objectFit: "cover"}} src={item.image} alt={item.name} />
-        )} */}
-        {/* </div> */}
-      </header>
-      {/* </div> */}
-
-      {/* <div>
-        {item.image && (
-          <img style={{ width: "50%", height: "100%" }} src={item.image} alt={item.name} />
-        )}
-      </div> */}
+      />
       <div style={{ padding: "0px 20px 0px 20px" }}>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <h1 style={{ color: "#148014" }}>{item.name}</h1>
