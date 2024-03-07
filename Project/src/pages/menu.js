@@ -180,15 +180,17 @@ export default function Menu() {
               {
                 name: "Nachos",
                 price: "$10",
-                description:
-                  "Tortilla chips smothered in melted cheese, topped with jalapenos, black olives, and sour cream.",
+                description: "Click for more information",
                 image: Nachos,
+                description2:
+                  "Tortilla chips smothered in melted cheese, topped with jalapenos, black olives, and sour cream.",
                 className: "menu-item",
               },
               {
                 name: "Chicken Wings",
                 price: "$12",
-                description:
+                description: "Click for more information",
+                description2:
                   "Crispy chicken wings tossed in your choice of sauce: Buffalo, BBQ, or Teriyaki. Served with celery sticks and ranch or blue cheese dressing.",
                 image: ChickenWings,
                 className: "menu-item",
@@ -204,7 +206,8 @@ export default function Menu() {
               {
                 name: "Chicken Parmesan",
                 price: "$16",
-                description:
+                description: "Click for more information",
+                description2:
                   "Tender, juicy chicken breast breaded and fried to perfection, then smothered in rich marinara sauce and melted mozzarella cheese. Served with a side of spaghetti.",
                 image: ParmChicken,
                 className: "menu-item",
@@ -212,7 +215,8 @@ export default function Menu() {
               {
                 name: "Spaghetti and Meatballs",
                 price: "$21",
-                description:
+                description: "Click for more information",
+                description2:
                   "Spaghetti smothered in rich marinara sauce and topped with savory meatballs. Served with garlic bread.",
                 image: Spaghetti,
                 className: "menu-item",
