@@ -9,19 +9,29 @@ const Welcome = () => {
   };
 
   return (
-    <div style={{ textAlign: 'center', marginTop: '50px' }}>
-      <h1>XYZ Bistro</h1>
-      <h1>Welcome</h1>
+    <div style={{ textAlign: 'center', marginTop: '10px' }}>
+       <header style={{ display: 'flex', justifyContent: 'center', paddingTop: '20px' }}>
+        <div>
+          <h1>
+            <span style={{ color: "red" }}>X</span>
+            <span style={{ color: "blue" }}>Y</span>
+            <span style={{ color: "green" }}>Z</span> Bistro
+          </h1>
+          <p style={{textAlign : 'center'}}>Since 2015</p>
+        </div>
+      </header>
+        <h1>Welcome</h1>
       <div style={{ display: 'flex', justifyContent: 'center', marginTop: '50px' }}>
         <Link to="/menu" style={{ marginRight: '20px', textDecoration: 'none' }}>
-          <button style={{ padding: '10px 20px', fontSize: '16px' }}>Start Ordering</button>
+          <button style={{ padding: '10px 20px', fontSize: '16px' }}>I am new here!</button>
         </Link>
         <Link to="/menu" style={{ textDecoration: 'none' }}>
-          <button style={{ padding: '10px 20px', fontSize: '16px' }}>I am new here !</button>
+          <button style={{ padding: '10px 20px', fontSize: '16px' }}>I know my way around!</button>
         </Link>
       </div>
-      <button onClick={handleCallForAssistance} style={{ padding: '10px 20px', fontSize: '16px', marginTop: '50px' }}>Call for assistance</button>
-      {assistanceMessage && <p>{assistanceMessage}</p>}
+        <Link to="/assistance" stlye={{textDecoration: 'none' }}>
+          <button style={{padding: '10px 20px', fontSize: '16px', marginTop: '50px'}}>Call for assistance</button>
+        </Link>
     </div>
   );
 };
