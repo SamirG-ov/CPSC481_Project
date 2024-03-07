@@ -5,7 +5,7 @@
 
 .tab {
   cursor: pointer;
-  width: 200px;
+  width: 160px;
   height: 100px;
 }
 
@@ -38,7 +38,7 @@
 .menu-item-details {
   display: flex;
   flex-direction: column;
-  padding-right: 300px;
+  padding-right: 500px;
 }
 
 img {

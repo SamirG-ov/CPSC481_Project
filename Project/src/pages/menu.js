@@ -104,7 +104,12 @@ export default function Menu() {
             <Tab className="tab" label="Dinner" {...a11yProps(2)} />
             <Tab className="tab" label="Drinks" {...a11yProps(3)} />
             <Tab className="tab" label="Recommendations" {...a11yProps(4)} />
-            <Tab className="tab" sx={{marginLeft: 'auto'}}label="Feedback" {...a11yProps(5)} />
+            <Tab
+              className="tab"
+              sx={{ marginLeft: "auto" }}
+              label="Feedback"
+              {...a11yProps(5)}
+            />
           </Tabs>
         </Box>
       </header>
@@ -119,7 +124,6 @@ export default function Menu() {
           <Tab className="sub-tab" label="Appetizers" {...a11yProps(1)} />
           <Tab className="sub-tab" label="Entrees" {...a11yProps(2)} />
           <Tab className="sub-tab" label="Soups" {...a11yProps(3)} />
-          
         </Tabs>
 
         <CustomTabPanel value={nestedValue} index={0}>
@@ -144,24 +148,6 @@ export default function Menu() {
                 image: ParmChicken,
                 description2:
                   "Dive into a culinary delight with our Chicken Parmesan, where tender chicken cutlets are lovingly breaded, fried to golden perfection, and smothered in tangy marinara sauce. Topped with a blanket of melted mozzarella and Parmesan cheeses, every bite offers a symphony of flavors that dance on your palate. Served alongside a bed of al dente spaghetti or a fresh salad, this classic dish is a timeless favorite that promises to satisfy your cravings and leave you longing for more.",
-              },
-              {
-                name: "Meat Raviolli",
-                price: "$18",
-                className: "menu-item",
-                description: "Click for more information",
-                image: MeatRavioli,
-                description2:
-                  "Transport yourself to the heart of Italy with our Beef Ravioli, a sumptuous dish that embodies the essence of Italian cuisine. Each handmade pasta parcel is filled with a savory blend of seasoned ground beef, fresh herbs, and creamy ricotta cheese, creating a harmonious marriage of flavors. Topped with a vibrant tomato sauce, fragrant basil, and a sprinkle of Parmesan cheese, every bite is a celebration of tradition and taste. Served alongside a crisp green salad and a glass of robust red wine, this classic dish invites you to savor the simple pleasures of Italian cooking. Buon appetito!",
-              },
-              {
-                name: "Risotto",
-                price: "$16",
-                className: "menu-item",
-                description: "Click for more information",
-                image: Risotto,
-                description2:
-                  "Embark on a culinary journey to Italy with our Risotto ai Funghi, a velvety Arborio rice dish infused with the earthy richness of wild mushrooms. Each spoonful reveals layers of flavor, from the nutty aroma of Parmesan cheese to the subtle hint of garlic and white wine. Slow-cooked to creamy perfection and finished with a drizzle of truffle oil and a sprinkle of fresh parsley, this classic Italian comfort food is a testament to simplicity and sophistication.",
               },
               {
                 name: "Cacciatora",
@@ -280,12 +266,62 @@ export default function Menu() {
           <MenuItemContent category="Alcoholic" items={[]} />
         </CustomTabPanel>
       </CustomTabPanel>
+
       <CustomTabPanel value={value} index={3}>
-      recommendations
+        <Tabs
+          value={nestedValueItemThree}
+          onChange={handleNestedChangeItemThree}
+          aria-label=""
+          TabIndicatorProps={{ style: { backgroundColor: "#148014" } }}
+        >
+          <Tab className="sub-tab" label="Chef Specials" {...a11yProps(0)} />
+          <Tab
+            className="sub-tab"
+            label="Dietary Preference"
+            {...a11yProps(1)}
+          />
+          <Tab className="sub-tab" label="Secret Menu" {...a11yProps(2)} />
+        </Tabs>
+
+        <CustomTabPanel value={nestedValueItemThree} index={0}>
+          <MenuItemContent
+            category="Chef Specials"
+            items={[
+              {
+                name: "Meat Raviolli",
+                price: "$18",
+                className: "menu-item",
+                description: "Click for more information",
+                image: MeatRavioli,
+                description2:
+                  "Transport yourself to the heart of Italy with our Beef Ravioli, a sumptuous dish that embodies the essence of Italian cuisine. Each handmade pasta parcel is filled with a savory blend of seasoned ground beef, fresh herbs, and creamy ricotta cheese, creating a harmonious marriage of flavors. Topped with a vibrant tomato sauce, fragrant basil, and a sprinkle of Parmesan cheese, every bite is a celebration of tradition and taste. Served alongside a crisp green salad and a glass of robust red wine, this classic dish invites you to savor the simple pleasures of Italian cooking. Buon appetito!",
+              },
+              {
+                name: "Risotto",
+                price: "$16",
+                className: "menu-item",
+                description: "Click for more information",
+                image: Risotto,
+                description2:
+                  "Embark on a culinary journey to Italy with our Risotto ai Funghi, a velvety Arborio rice dish infused with the earthy richness of wild mushrooms. Each spoonful reveals layers of flavor, from the nutty aroma of Parmesan cheese to the subtle hint of garlic and white wine. Slow-cooked to creamy perfection and finished with a drizzle of truffle oil and a sprinkle of fresh parsley, this classic Italian comfort food is a testament to simplicity and sophistication.",
+              },
+            ]}
+          />
+        </CustomTabPanel>
+
+        <CustomTabPanel value={nestedValueItemThree} index={1}>
+          <MenuItemContent category="Dietary Preference" items={[]} />
+        </CustomTabPanel>
+
+        <CustomTabPanel value={nestedValueItemThree} index={2}>
+          <MenuItemContent category="Secret Menu" items={[]} />
+        </CustomTabPanel>
       </CustomTabPanel>
+
       <CustomTabPanel value={value} index={4}>
-      <Feedback/>
+        <Feedback />
       </CustomTabPanel>
+
       <footer style={{ paddingBottom: "100px" }} />
     </div>
   );
