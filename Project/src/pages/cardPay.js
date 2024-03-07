@@ -20,9 +20,10 @@ const CardPay = () => {
 
   return (
 
-<div>
+<div style={{backgroundColor: "f8f9fa"}}>
   <header class="displayLogo">
     <div className="mainLogo">
+    <div style={{paddingLeft: "500%"}}><button className = "back">↩️</button></div>
       <h1>
         <span style={{ color: "red" }}>X</span>
         <span style={{ color: "blue" }}>Y</span>

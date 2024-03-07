@@ -38,11 +38,11 @@ const PaymentComplete = () => {
 <div className = "holderHolder">
   <div className = "textHolder">
     <p className = "thanksText">Thank You</p>
-    <p className= "thanksText">for dining with us!</p>
+    <p className= "thanksText"> for dining with us!</p>
   </div>
 </div>
 
-    <p className = "thanksTextUnderLine">See you again soon!</p>
+    <p className = "thanksTextUnderLine"> See you again soon!</p>
 
 
   <div className="foot">
