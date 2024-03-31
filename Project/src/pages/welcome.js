@@ -45,7 +45,7 @@ const Welcome = () => {
         <div className="buttons">
           <Link to="/menu">
             <button type="button" className="button">
-              I AM NEW HERE!
+              SHOW ME SOME RECOMMENDATIONS!
             </button>
           </Link>
           <Link to="/menu">
