@@ -7,7 +7,7 @@ const Home = () => {
         <h1>Home Page</h1>
         <br />
         <ul>
-            <li><Link to="/welcome">Welcome</Link></li>
+            <li><Link to="/">Welcome</Link></li>
             <li><Link to="/assistance">Assistance</Link></li>
             <li><Link to="/menu">Menu</Link></li>
             <li><Link to="/orderCart">OrderCart</Link></li>

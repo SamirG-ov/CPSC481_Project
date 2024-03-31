@@ -6,7 +6,7 @@ const AssistanceButton = () => {
   const location = useLocation();
 
   const isNotAssistancePage = location.pathname !== "/assistance";
-  const isNotWelcomePage = location.pathname !== "/welcome";
+  const isNotWelcomePage = location.pathname !== "/";
 
   const handleClick = () => {
     navigate("/assistance");

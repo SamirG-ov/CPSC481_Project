@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
@@ -13,7 +13,6 @@ import ParmChicken from "../assets/parmChicken.jpg";
 import Nachos from "../assets/nachos.jpg";
 import ChickenWings from "../assets/chickenWings.jpg";
 import Spaghetti from "../assets/spaghetti.jpg";
-// import CokeImg from "../assets/coke.jpg";
 
 // import LasagnaImg from '../assets/lasagna.jpg';
 import MeatRavioli from "../assets/meatRavioli.jpg";
@@ -58,6 +57,8 @@ function a11yProps(index) {
 
 export default function Menu() {
   const navigate = useNavigate();
+  const location = useLocation(); //TODO: use this to get the meal type
+
   const [value, setValue] = React.useState(0);
   const [nestedValue, setNestedValue] = React.useState(0);
   const [nestedValueItemTwo, setNestedValueItemTwo] = React.useState(0);

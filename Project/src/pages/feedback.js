@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import * as React from 'react';
 import PropTypes from "prop-types";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import MenuItemContent from "../components/menuItemContent";
+import NavBar from "../components/navBar";
 
 const Feedback = () => {
   const [feedback, setFeedback] = useState("");
@@ -16,7 +13,7 @@ const Feedback = () => {
     event.preventDefault();
     console.log("Feedback submitted:", feedback);
     alert("Thank you for your feedback");
-    navigate("/welcome");
+    navigate("/");
   };
 
   function CustomTabPanel(props) {
@@ -53,24 +50,8 @@ const Feedback = () => {
 
   return (
     <div>
-      <div style={{paddingBottom: "150px"}}>
-        {/* <header
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            paddingTop: "20px",
-            
-          }}
-        >
-          <div>
-            <h1>
-              <span style={{ color: "red" }}>X</span>
-              <span style={{ color: "blue" }}>Y</span>
-              <span style={{ color: "green" }}>Z</span> Bistro
-            </h1>
-            <p style={{ textAlign: "center" }}>Since 2015</p>
-          </div>
-        </header> */}
+      <div style={{ paddingBottom: "150px" }}>
+        <NavBar />
       </div>
       <div
         style={{
