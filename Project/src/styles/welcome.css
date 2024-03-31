@@ -31,7 +31,7 @@
 
 .small {
   width: 0px;
-  height: 30px;
+  height: 100px;
   opacity: 1;
   border: 10px solid #148014;
 }
@@ -41,19 +41,20 @@
   left: 100px;
   margin: auto;
   color: black;
-  width: 500px;
+  width: 700px;
+  font-size: 25px;
 }
 
 .buttons {
   position: relative;
   left: 60px;
   display: flex;
+  justify-content: center;
 }
 
 .button {
-  margin-left: 30px;
+  margin: 30px;
   border-radius: 60px;
-  margin-top: 35px;
   width: 200px;
   height: 70px;
   padding: 10px;
@@ -62,7 +63,7 @@
   text-decoration-color: #148014;
   box-shadow: 4px 4px 4px #857979;
   color: #ffffff;
-  font-size: 15px;
+  font-size: 20px;
   cursor: pointer;
 }
 
@@ -73,19 +74,16 @@
 }
 
 .current-time {
-  font-size: 3px;
+  font-size: 10px;
   position: relative;
   left: 60px;
-  margin-top: 50px;
 }
 
 .meal {
-  font-size: medium;
   margin: auto;
 }
 
 .time {
-  font-size: small;
   color: darkred;
   opacity: 0.5;
 }
