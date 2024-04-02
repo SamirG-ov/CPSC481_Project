@@ -14,8 +14,7 @@ import TipOptions from "./pages/tipOptions";
 import CashPay from "./pages/cashPay";
 import CardPay from "./pages/cardPay";
 import PaymentComplete from "./pages/paymentComplete";
-import FloatingButton from "./components/floatingButton";
-import AssistanceButton from "./components/assistanceButton";
+import Footer from "./components/footer";
 
 function App() {
   return (
@@ -36,16 +35,7 @@ function App() {
           <Route path="/cardPay" element={<CardPay />} />
           <Route path="/paymentComplete" element={<PaymentComplete />} />
         </Routes>
-        <footer
-          style={{
-            position: "fixed",
-            bottom: "0",
-            width: "100%",
-          }}
-        >
-          <FloatingButton />
-          <AssistanceButton />
-        </footer>
+        <Footer />
       </Router>
     </div>
   );

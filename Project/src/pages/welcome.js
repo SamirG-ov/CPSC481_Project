@@ -54,7 +54,11 @@ const Welcome = () => {
             </button>
           </Link>
           <Link to="/assistance">
-            <button type="button" className="button">
+            <button
+              type="button"
+              className="button"
+              style={{ backgroundColor: "darkorange" }}
+            >
               CALL FOR ASSISTANCE
             </button>
           </Link>

@@ -1,5 +1,7 @@
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart, faClock } from "@fortawesome/free-solid-svg-icons";
 
 const FloatingButton = () => {
   const location = useLocation();
@@ -8,6 +10,9 @@ const FloatingButton = () => {
   // Check if the current location is the Menu page
   const isMenuPage = location.pathname === "/menu";
 
+  // Retrieve cart items from the global variable
+  const cartItems = window.cart || [];
+
   return isMenuPage ? (
     <div style={{ display: "flex", flexDirection: "row" }}>
       <button
@@ -15,14 +20,33 @@ const FloatingButton = () => {
         className="view-cart"
         onClick={() => navigate("orderCart")}
       >
-        View Cart
+        <FontAwesomeIcon icon={faShoppingCart} /> <div>View Cart</div>{" "}
+        <div
+          style={{
+            height: "20px",
+            width: "20px",
+            borderRadius: "50%",
+            backgroundColor: "darkgreen",
+            color: "white",
+            padding: "1px",
+          }}
+        >
+          {cartItems.length}
+        </div>
       </button>
       <button
         type="button"
         className="view-cart"
+        style={{
+          backgroundColor: "white",
+          color: "green",
+          border: "1px solid green",
+          boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.5)",
+        }}
         onClick={() => navigate("trackOrder")}
       >
-        Track Order
+        <FontAwesomeIcon icon={faClock} />{" "}
+        <div style={{ paddingRight: "10px" }}>Track Order</div>
       </button>
     </div>
   ) : null;

@@ -51,7 +51,7 @@ const ItemPage = () => {
       <div style={{ padding: "0px 20px 0px 20px" }}>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <h1 style={{ color: "#148014" }}>{item.name}</h1>
-          {/* Quantity control */}
+
           <div style={{ paddingTop: "35px" }}>
             <button
               type="button"
@@ -73,7 +73,7 @@ const ItemPage = () => {
           </div>
         </div>
         <h2>{item.price}.00</h2>
-        <Typography variant="body1">{item.description2}</Typography>
+        <Typography variant="body1">{item.description}</Typography>
 
         <div style={{ paddingTop: "20px" }}>
           <label

@@ -1,5 +1,7 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPhone } from "@fortawesome/free-solid-svg-icons";
 
 const AssistanceButton = () => {
   const navigate = useNavigate();
@@ -15,9 +17,11 @@ const AssistanceButton = () => {
   return isNotAssistancePage && isNotWelcomePage ? (
     <button
       type="button"
-      className="view-cart assistance-button"
+      className="view-cart"
+      style={{ width: "170px", backgroundColor: "darkorange" }}
       onClick={() => handleClick()}
     >
+      <FontAwesomeIcon icon={faPhone} />
       Call Assistance
     </button>
   ) : null;

@@ -6,21 +6,19 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import MenuItemContent from "../components/menuItemContent";
+import Feedback from "./feedback";
 import "../styles/menu.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 import LasagnaImg from "../assets/lasagna.jpg";
 import ParmChicken from "../assets/parmChicken.jpg";
 import Nachos from "../assets/nachos.jpg";
 import ChickenWings from "../assets/chickenWings.jpg";
 import Spaghetti from "../assets/spaghetti.jpg";
-
-// import LasagnaImg from '../assets/lasagna.jpg';
 import MeatRavioli from "../assets/meatRavioli.jpg";
 import Cacciatora from "../assets/Cacciatora.jpg";
-// import ParmChicken from '../assets/parmChicken.jpg';
 import Risotto from "../assets/Risotto.jpeg";
-
-import Feedback from "./feedback";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -56,7 +54,7 @@ function a11yProps(index) {
 }
 
 export default function Menu() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const location = useLocation(); //TODO: use this to get the meal type
 
   const [value, setValue] = React.useState(0);
@@ -64,7 +62,7 @@ export default function Menu() {
   const [nestedValueItemTwo, setNestedValueItemTwo] = React.useState(0);
 
   const [nestedValueItemThree, setNestedValueItemThree] = React.useState(0);
-  const [searchTerm, setSearchTerm] = React.useState("");
+  const [searchTerm, setSearchTerm] = React.useState(""); //TODO: use this to search for items
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -84,14 +82,43 @@ export default function Menu() {
 
   return (
     <div>
-      <header>
+      <header style={{ display: "flex", justifyContent: "center" }}>
+        <div
+          style={{
+            position: "fixed",
+            left: "0",
+          }}
+        >
+          <button
+            style={{
+              color: "black",
+              border: "none",
+              borderRadius: "100px",
+              cursor: "pointer",
+              fontSize: "30px",
+            }}
+            type="button"
+            onClick={() => window.history.back()}
+          >
+            <FontAwesomeIcon icon={faArrowLeft} />
+          </button>
+        </div>
         <div className="logo">
-          <h1>
+          <h1 style={{ fontSize: "40px", margin: "20px 0px 5px 0px" }}>
             <span style={{ color: "red" }}>X</span>
             <span style={{ color: "blue" }}>Y</span>
             <span style={{ color: "green" }}>Z</span> Bistro
           </h1>
-          <p>Since 2015</p>
+          <p
+            style={{
+              textAlign: "center",
+              fontSize: "20px",
+              margin: "2px 0px 5px 0px",
+              fontWeight: "bold",
+            }}
+          >
+            Since 2015
+          </p>
         </div>
         <Box sx={{ width: "100%", paddingLeft: "20px" }}>
           <Tabs
@@ -101,13 +128,49 @@ export default function Menu() {
             aria-label="basic tabs example"
             TabIndicatorProps={{ style: { backgroundColor: "#148014" } }}
           >
-            <Tab className="tab" label="Lunch" {...a11yProps(1)} />
-            <Tab className="tab" label="Dinner" {...a11yProps(2)} />
-            <Tab className="tab" label="Drinks" {...a11yProps(3)} />
-            <Tab className="tab" label="Recommendations" {...a11yProps(4)} />
             <Tab
               className="tab"
-              sx={{ marginLeft: "auto" }}
+              style={{
+                fontWeight: "bold",
+                fontSize: "15px",
+              }}
+              label="Lunch"
+              {...a11yProps(1)}
+            />
+            <Tab
+              className="tab"
+              style={{
+                fontWeight: "bold",
+                fontSize: "15px",
+              }}
+              label="Dinner"
+              {...a11yProps(2)}
+            />
+            <Tab
+              className="tab"
+              style={{
+                fontWeight: "bold",
+                fontSize: "15px",
+              }}
+              label="Drinks"
+              {...a11yProps(3)}
+            />
+            <Tab
+              className="tab"
+              style={{
+                fontWeight: "bold",
+                fontSize: "15px",
+              }}
+              label="Recommendations"
+              {...a11yProps(4)}
+            />
+            <Tab
+              className="tab"
+              style={{
+                marginLeft: "auto",
+                fontWeight: "bold",
+                fontSize: "15px",
+              }}
               label="Feedback"
               {...a11yProps(5)}
             />
@@ -121,10 +184,42 @@ export default function Menu() {
           aria-label=""
           TabIndicatorProps={{ style: { backgroundColor: "#148014" } }}
         >
-          <Tab className="sub-tab" label="Specials" {...a11yProps(0)} />
-          <Tab className="sub-tab" label="Appetizers" {...a11yProps(1)} />
-          <Tab className="sub-tab" label="Entrees" {...a11yProps(2)} />
-          <Tab className="sub-tab" label="Soups" {...a11yProps(3)} />
+          <Tab
+            className="sub-tab"
+            style={{
+              fontWeight: "bold",
+              fontSize: "15px",
+            }}
+            label="Specials"
+            {...a11yProps(0)}
+          />
+          <Tab
+            className="sub-tab"
+            style={{
+              fontWeight: "bold",
+              fontSize: "15px",
+            }}
+            label="Appetizers"
+            {...a11yProps(1)}
+          />
+          <Tab
+            className="sub-tab"
+            style={{
+              fontWeight: "bold",
+              fontSize: "15px",
+            }}
+            label="Entrees"
+            {...a11yProps(2)}
+          />
+          <Tab
+            className="sub-tab"
+            style={{
+              fontWeight: "bold",
+              fontSize: "15px",
+            }}
+            label="Soups"
+            {...a11yProps(3)}
+          />
         </Tabs>
 
         <CustomTabPanel value={nestedValue} index={0}>
@@ -135,28 +230,24 @@ export default function Menu() {
                 name: "Lasagna",
                 price: "$12",
                 className: "menu-item",
-                description: "Click for more information",
                 image: LasagnaImg,
-                // destination: "feedback",
-                description2:
+                description:
                   "Our Classic Lasagna offers a delectable journey through layers of perfectly cooked pasta, savory meats, and a symphony of cheeses, all embraced by a rich tomato sauce. Each bite promises a harmonious blend of flavors and textures, from the creamy ricotta to the golden-baked edges, creating a comforting and satisfying experience that embodies the essence of Italian cuisine.",
               },
               {
                 name: "Chicken Parmesan",
                 price: "$16",
                 className: "menu-item",
-                description: "Click for more information",
                 image: ParmChicken,
-                description2:
+                description:
                   "Dive into a culinary delight with our Chicken Parmesan, where tender chicken cutlets are lovingly breaded, fried to golden perfection, and smothered in tangy marinara sauce. Topped with a blanket of melted mozzarella and Parmesan cheeses, every bite offers a symphony of flavors that dance on your palate. Served alongside a bed of al dente spaghetti or a fresh salad, this classic dish is a timeless favorite that promises to satisfy your cravings and leave you longing for more.",
               },
               {
                 name: "Cacciatora",
                 price: "$15",
                 className: "menu-item",
-                description: "Click for more information",
                 image: Cacciatora,
-                description2:
+                description:
                   "Experience the rustic charm of Italian countryside cuisine with our Pollo alla Cacciatora, a hearty chicken stew simmered to perfection in a flavorful tomato sauce. Tender chicken pieces are marinated with fragrant herbs, garlic, and onions, then slow-cooked until they melt in your mouth. Served alongside creamy polenta or al dente pasta, this soul-warming dish is a tribute to the timeless tradition of home-cooked meals in Italy.",
               },
             ]}
@@ -170,17 +261,15 @@ export default function Menu() {
               {
                 name: "Nachos",
                 price: "$10",
-                description: "Click for more information",
                 image: Nachos,
-                description2:
+                description:
                   "Tortilla chips smothered in melted cheese, topped with jalapenos, black olives, and sour cream.",
                 className: "menu-item",
               },
               {
                 name: "Chicken Wings",
                 price: "$12",
-                description: "Click for more information",
-                description2:
+                description:
                   "Crispy chicken wings tossed in your choice of sauce: Buffalo, BBQ, or Teriyaki. Served with celery sticks and ranch or blue cheese dressing.",
                 image: ChickenWings,
                 className: "menu-item",
@@ -226,10 +315,42 @@ export default function Menu() {
           aria-label=""
           TabIndicatorProps={{ style: { backgroundColor: "#148014" } }}
         >
-          <Tab className="sub-tab" label="Specials" {...a11yProps(0)} />
-          <Tab className="sub-tab" label="Appetizers" {...a11yProps(1)} />
-          <Tab className="sub-tab" label="Main Courses" {...a11yProps(2)} />
-          <Tab className="sub-tab" label="Desserts" {...a11yProps(3)} />
+          <Tab
+            className="sub-tab"
+            style={{
+              fontWeight: "bold",
+              fontSize: "15px",
+            }}
+            label="Specials"
+            {...a11yProps(0)}
+          />
+          <Tab
+            className="sub-tab"
+            style={{
+              fontWeight: "bold",
+              fontSize: "15px",
+            }}
+            label="Appetizers"
+            {...a11yProps(1)}
+          />
+          <Tab
+            className="sub-tab"
+            style={{
+              fontWeight: "bold",
+              fontSize: "15px",
+            }}
+            label="Main Courses"
+            {...a11yProps(2)}
+          />
+          <Tab
+            className="sub-tab"
+            style={{
+              fontWeight: "bold",
+              fontSize: "15px",
+            }}
+            label="Desserts"
+            {...a11yProps(3)}
+          />
         </Tabs>
 
         <CustomTabPanel value={nestedValueItemTwo} index={0}>
@@ -255,8 +376,24 @@ export default function Menu() {
           aria-label=""
           TabIndicatorProps={{ style: { backgroundColor: "#148014" } }}
         >
-          <Tab className="sub-tab" label="Non-Alcoholic" {...a11yProps(0)} />
-          <Tab className="sub-tab" label="Alcoholic" {...a11yProps(1)} />
+          <Tab
+            className="sub-tab"
+            style={{
+              fontWeight: "bold",
+              fontSize: "15px",
+            }}
+            label="Non-Alcoholic"
+            {...a11yProps(0)}
+          />
+          <Tab
+            className="sub-tab"
+            style={{
+              fontWeight: "bold",
+              fontSize: "15px",
+            }}
+            label="Alcoholic"
+            {...a11yProps(1)}
+          />
         </Tabs>
 
         <CustomTabPanel value={nestedValueItemThree} index={0}>
@@ -275,13 +412,33 @@ export default function Menu() {
           aria-label=""
           TabIndicatorProps={{ style: { backgroundColor: "#148014" } }}
         >
-          <Tab className="sub-tab" label="Chef Specials" {...a11yProps(0)} />
           <Tab
             className="sub-tab"
+            style={{
+              fontWeight: "bold",
+              fontSize: "15px",
+            }}
+            label="Chef Specials"
+            {...a11yProps(0)}
+          />
+          <Tab
+            className="sub-tab"
+            style={{
+              fontWeight: "bold",
+              fontSize: "15px",
+            }}
             label="Dietary Preference"
             {...a11yProps(1)}
           />
-          <Tab className="sub-tab" label="Secret Menu" {...a11yProps(2)} />
+          <Tab
+            className="sub-tab"
+            style={{
+              fontWeight: "bold",
+              fontSize: "15px",
+            }}
+            label="Secret Menu"
+            {...a11yProps(2)}
+          />
         </Tabs>
 
         <CustomTabPanel value={nestedValueItemThree} index={0}>
@@ -322,8 +479,6 @@ export default function Menu() {
       <CustomTabPanel value={value} index={4}>
         <Feedback />
       </CustomTabPanel>
-
-      <footer style={{ paddingBottom: "100px" }} />
     </div>
   );
 }
