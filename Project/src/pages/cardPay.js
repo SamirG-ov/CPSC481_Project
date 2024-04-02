@@ -19,6 +19,10 @@ const CardPay = () => {
   const tax = subTotal * 0.05;
   const totalPrice = subTotal + tax;
 
+  setTimeout(() => {
+    navigate("/paymentComplete");
+  }, 5000);
+
   return (
     <div style={{ backgroundColor: "f8f9fa" }}>
       <NavBar />

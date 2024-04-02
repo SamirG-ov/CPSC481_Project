@@ -6,9 +6,7 @@ import "../styles/cashPay.css";
 import NavBar from "../components/navBar";
 
 const CashPay = () => {
-  const location = useLocation();
   const navigate = useNavigate();
-  const searchParams = new URLSearchParams(location.search);
   const [cartItems] = useState(window.cart);
   const subTotal = cartItems.reduce((total, cartItem) => {
     const menuItem = cartItem.item;
@@ -17,6 +15,10 @@ const CashPay = () => {
   }, 0);
   const tax = subTotal * 0.05;
   const totalPrice = subTotal + tax;
+
+  setTimeout(() => {
+    navigate("/paymentComplete");
+  }, 5000);
 
   return (
     <div>
@@ -37,18 +39,6 @@ const CashPay = () => {
         >
           Assistance will be with you shortly to take your cash payment.
         </p>
-      </div>
-
-      <div className="footer">
-        <div>
-          <button
-            type="button"
-            className="pay-button"
-            onClick={() => navigate("/paymentComplete")}
-          >
-            Payment Complete
-          </button>
-        </div>
       </div>
     </div>
   );

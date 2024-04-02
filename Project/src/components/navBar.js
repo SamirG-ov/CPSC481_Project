@@ -7,6 +7,7 @@ const NavBar = () => {
   const isMenuPage = location.pathname === "/menu";
   const isWelcomePage = location.pathname === "/";
   const isCardPay = location.pathname === "/cardPay";
+  const isPaymentComplete = location.pathname === "/paymentComplete";
 
   return !isMenuPage ? (
     <header
@@ -16,7 +17,7 @@ const NavBar = () => {
         padding: "0 20px",
       }}
     >
-      {!isWelcomePage && !isCardPay ? (
+      {!isWelcomePage && !isCardPay && !isPaymentComplete ? (
         <div
           style={{
             position: "fixed",
