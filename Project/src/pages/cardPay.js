@@ -1,15 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import "../styles/cardPay.css";
 import tapSvg from "../assets/contactless-icon.svg";
 import NavBar from "../components/navBar";
 
 const CardPay = () => {
-  const location = useLocation();
   const navigate = useNavigate();
-  const searchParams = new URLSearchParams(location.search);
   const [cartItems] = useState(window.cart);
   const subTotal = cartItems.reduce((total, cartItem) => {
     const menuItem = cartItem.item;
