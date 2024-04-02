@@ -1,9 +1,10 @@
-import React from 'react';
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import "../styles/cardPay.css";
-import tapSvg from '../assets/contactless-icon.svg';
+import tapSvg from "../assets/contactless-icon.svg";
+import NavBar from "../components/navBar";
 
 const CardPay = () => {
   const location = useLocation();
@@ -19,34 +20,22 @@ const CardPay = () => {
   const totalPrice = subTotal + tax;
 
   return (
-
-<div style={{backgroundColor: "f8f9fa"}}>
-  <header class="displayLogo">
-    <div className="mainLogo">
-    <div style={{paddingLeft: "500%"}}><button className = "back">↩️</button></div>
-      <h1>
-        <span style={{ color: "red" }}>X</span>
-        <span style={{ color: "blue" }}>Y</span>
-        <span style={{ color: "green" }}>Z</span> Bistro
-      </h1>
-      <p>Since 2015</p>
-    </div>
-  </header>
-
-  <div>
-    <p className ="total-price">Total: ${totalPrice.toFixed(2)}</p>
-  </div>
-
-  <div className = "textHold">
-    <p className = "payText">Insert, Swipe or Tap</p>
-  </div>
-
-  <div className="footer">
-          <div>
-            <img src= {tapSvg}></img>
-          </div>
+    <div style={{ backgroundColor: "f8f9fa" }}>
+      <NavBar />
+      <div>
+        <p className="total-price">Total: ${totalPrice.toFixed(2)}</p>
       </div>
-</div>
+
+      <div className="textHold">
+        <p className="payText">Insert, Swipe or Tap</p>
+      </div>
+
+      <div className="footer">
+        <div>
+          <img src={tapSvg} alt={tapSvg} />
+        </div>
+      </div>
+    </div>
   );
 };
 

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import "../styles/payment.css";
+import TitleNavBar from "../components/titleNavBar";
 
 const Payment = () => {
   const location = useLocation();
@@ -22,18 +23,7 @@ const Payment = () => {
 
   return (
     <div>
-      <header>
-        <div className="logo">
-          <h1>
-            <span style={{ color: "red" }}>X</span>
-            <span style={{ color: "blue" }}>Y</span>
-            <span style={{ color: "green" }}>Z</span> Bistro
-          </h1>
-          <p>Since 2015</p>
-        </div>
-        <h1 className="title">Order Summary</h1>
-        <button className = "back">↩️</button>
-      </header>
+      <TitleNavBar title="Order Summary" />
       <div className="cart-item">
         <h3 className="item-title" style={{ color: "black" }}>
           Item

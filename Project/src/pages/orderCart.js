@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import "../styles/orderCart.css";
+import TitleNavBar from "../components/titleNavBar";
 
 const OrderCart = () => {
   const navigate = useNavigate();
@@ -40,18 +41,7 @@ const OrderCart = () => {
 
   return (
     <div>
-      <header>
-        <div className="logo">
-          <h1>
-            <span style={{ color: "red" }}>X</span>
-            <span style={{ color: "blue" }}>Y</span>
-            <span style={{ color: "green" }}>Z</span> Bistro
-          </h1>
-          <p>Since 2015</p>
-        </div>
-        <h1 className="title">Order Cart</h1>
-      </header>
-
+      <TitleNavBar title="Order Cart" />
       {cartItems.length === 0 ? (
         <div className="empty-cart">
           <p className="empty-message">
@@ -63,7 +53,7 @@ const OrderCart = () => {
             className="back-button"
             onClick={() => navigate("/menu")}
           >
-            Continue Browsing
+            Go Back to Menu
           </button>
         </div>
       ) : (
@@ -173,7 +163,7 @@ const OrderCart = () => {
               className="back-button"
               onClick={() => handleBackToMenu()}
             >
-              Continue Browsing
+              Go Back to Menu
             </button>
             <button
               type="button"

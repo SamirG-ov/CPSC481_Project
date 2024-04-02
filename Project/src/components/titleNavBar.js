@@ -1,13 +1,8 @@
-import { useLocation } from "react-router-dom";
-
-const NavBar = () => {
-  const location = useLocation();
-  const isMenuPage = location.pathname === "/menu";
-
-  return !isMenuPage ? (
+const TitleNavBar = ({ title }) => {
+  return (
     <header style={{ display: "flex", justifyContent: "center" }}>
-      <div>
-        <h1 style={{ fontSize: "50px", margin: "20px 0px 5px 0px" }}>
+      <div className="logo">
+        <h1 style={{ fontSize: "40px", margin: "20px 0px 5px 0px" }}>
           <span style={{ color: "red" }}>X</span>
           <span style={{ color: "blue" }}>Y</span>
           <span style={{ color: "green" }}>Z</span> Bistro
@@ -15,7 +10,7 @@ const NavBar = () => {
         <p
           style={{
             textAlign: "center",
-            fontSize: "25px",
+            fontSize: "20px",
             margin: "2px 0px 5px 0px",
             fontWeight: "bold",
           }}
@@ -23,8 +18,9 @@ const NavBar = () => {
           Since 2015
         </p>
       </div>
+      <h1 className="title">{title}</h1>
     </header>
-  ) : null;
+  );
 };
 
-export default NavBar;
+export default TitleNavBar;
