@@ -6,6 +6,7 @@ const NavBar = () => {
   const location = useLocation();
   const isMenuPage = location.pathname === "/menu";
   const isWelcomePage = location.pathname === "/";
+  const isCardPay = location.pathname === "/cardPay";
 
   return !isMenuPage ? (
     <header
@@ -15,19 +16,18 @@ const NavBar = () => {
         padding: "0 20px",
       }}
     >
-      {!isWelcomePage ? (
+      {!isWelcomePage && !isCardPay ? (
         <div
           style={{
             position: "fixed",
             left: "0",
-            margin: "50px 20px",
+            paddingTop: "10px",
           }}
         >
           <button
             style={{
-              backgroundColor: "#f2f2f2",
               color: "black",
-              border: "1px solid black",
+              border: "none",
               borderRadius: "100px",
               cursor: "pointer",
               fontSize: "30px",
