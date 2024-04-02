@@ -19,6 +19,15 @@ import Spaghetti from "../assets/spaghetti.jpg";
 import MeatRavioli from "../assets/meatRavioli.jpg";
 import Cacciatora from "../assets/Cacciatora.jpg";
 import Risotto from "../assets/Risotto.jpeg";
+import MozzarellaSticks from "../assets/mozzarellaSticks.jpeg";
+import GarlicBread from "../assets/garlicBread.jpg";
+import ChickenAlfredo from "../assets/chickenAlfredo.jpg";
+import ShrimpScampi from "../assets/shrimpScampi.jpg";
+import VegetableStirFry from "../assets/veggieStirFry.jpg";
+import Minestrone from "../assets/minestrone.jpg";
+import ClamChowder from "../assets/clamChowder.jpg";
+import FrenchOnion from "../assets/frenchOnion.jpg";
+import TomatoBasil from "../assets/tomatoBasil.jpg";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -232,7 +241,7 @@ export default function Menu() {
                 className: "menu-item",
                 image: LasagnaImg,
                 description:
-                  "Our Classic Lasagna offers a delectable journey through layers of perfectly cooked pasta, savory meats, and a symphony of cheeses, all embraced by a rich tomato sauce. Each bite promises a harmonious blend of flavors and textures, from the creamy ricotta to the golden-baked edges, creating a comforting and satisfying experience that embodies the essence of Italian cuisine.",
+                  "Layers of pasta, seasoned ground beef, Italian sausage, fresh vegetables, Bolognese sauce, béchamel, topped with melted mozzarella and Parmesan.",
               },
               {
                 name: "Chicken Parmesan",
@@ -240,7 +249,7 @@ export default function Menu() {
                 className: "menu-item",
                 image: ParmChicken,
                 description:
-                  "Dive into a culinary delight with our Chicken Parmesan, where tender chicken cutlets are lovingly breaded, fried to golden perfection, and smothered in tangy marinara sauce. Topped with a blanket of melted mozzarella and Parmesan cheeses, every bite offers a symphony of flavors that dance on your palate. Served alongside a bed of al dente spaghetti or a fresh salad, this classic dish is a timeless favorite that promises to satisfy your cravings and leave you longing for more.",
+                  "Breaded chicken breast topped with marinara sauce and melted mozzarella cheese. Served with a side of spaghetti.",
               },
               {
                 name: "Cacciatora",
@@ -248,7 +257,15 @@ export default function Menu() {
                 className: "menu-item",
                 image: Cacciatora,
                 description:
-                  "Experience the rustic charm of Italian countryside cuisine with our Pollo alla Cacciatora, a hearty chicken stew simmered to perfection in a flavorful tomato sauce. Tender chicken pieces are marinated with fragrant herbs, garlic, and onions, then slow-cooked until they melt in your mouth. Served alongside creamy polenta or al dente pasta, this soul-warming dish is a tribute to the timeless tradition of home-cooked meals in Italy.",
+                  "Juicy chicken pieces simmered in a flavorful tomato sauce with bell peppers, onions, mushrooms, and Italian herbs. Served over a bed of pasta or with crusty bread for dipping.",
+              },
+              {
+                name: "Risotto",
+                price: "$16",
+                className: "menu-item",
+                image: Risotto,
+                description:
+                  "Creamy Arborio rice cooked with white wine, Parmesan cheese, and a medley of wild mushrooms. Finished with a drizzle of truffle oil and fresh parsley.",
               },
             ]}
           />
@@ -261,18 +278,34 @@ export default function Menu() {
               {
                 name: "Nachos",
                 price: "$10",
+                className: "menu-item",
                 image: Nachos,
                 description:
                   "Tortilla chips smothered in melted cheese, topped with jalapenos, black olives, and sour cream.",
-                className: "menu-item",
               },
               {
                 name: "Chicken Wings",
                 price: "$12",
+                className: "menu-item",
+                image: ChickenWings,
                 description:
                   "Crispy chicken wings tossed in your choice of sauce: Buffalo, BBQ, or Teriyaki. Served with celery sticks and ranch or blue cheese dressing.",
-                image: ChickenWings,
+              },
+              {
+                name: "Mozzarella Sticks",
+                price: "$8",
                 className: "menu-item",
+                image: MozzarellaSticks,
+                description:
+                  "Golden fried mozzarella sticks served with marinara sauce for dipping.",
+              },
+              {
+                name: "Garlic Bread",
+                price: "$6",
+                className: "menu-item",
+                image: GarlicBread,
+                description:
+                  "Toasted French bread topped with garlic butter. Served with marinara sauce.",
               },
             ]}
           />
@@ -283,31 +316,82 @@ export default function Menu() {
             category="Entrees"
             items={[
               {
-                name: "Chicken Parmesan",
-                price: "$16",
-                description: "Click for more information",
-                description2:
-                  "Tender, juicy chicken breast breaded and fried to perfection, then smothered in rich marinara sauce and melted mozzarella cheese. Served with a side of spaghetti.",
-                image: ParmChicken,
+                name: "Chicken Alfredo",
+                price: "$18",
                 className: "menu-item",
+                image: ChickenAlfredo,
+                description:
+                  "Grilled chicken breast served over fettuccine pasta tossed in creamy Alfredo sauce. Served with garlic bread.",
               },
               {
                 name: "Spaghetti and Meatballs",
                 price: "$21",
-                description: "Click for more information",
-                description2:
-                  "Spaghetti smothered in rich marinara sauce and topped with savory meatballs. Served with garlic bread.",
-                image: Spaghetti,
                 className: "menu-item",
+                image: Spaghetti,
+                description:
+                  "Spaghetti smothered in rich marinara sauce and topped with savory meatballs. Served with garlic bread.",
+              },
+              {
+                name: "Shrimp Scampi",
+                price: "$22",
+                className: "menu-item",
+                image: ShrimpScampi,
+                description:
+                  "Tender shrimp sautéed in garlic butter and white wine, served over a bed of linguine. Served with garlic bread.",
+              },
+              {
+                name: "Vegetable Stir-Fry",
+                price: "$15",
+                className: "menu-item",
+                image: VegetableStirFry,
+                description:
+                  "Fresh vegetables stir-fried in a savory sauce, served over steamed rice.",
               },
             ]}
           />
         </CustomTabPanel>
 
         <CustomTabPanel value={nestedValue} index={3}>
-          <MenuItemContent category="Soups" items={[]} />
+          <MenuItemContent
+            category="Soups"
+            items={[
+              {
+                name: "Minestrone",
+                price: "$8",
+                className: "menu-item",
+                image: Minestrone,
+                description:
+                  "A hearty vegetable soup made with tomatoes, beans, pasta, and seasonal vegetables. Served with crusty bread.",
+              },
+              {
+                name: "Clam Chowder",
+                price: "$10",
+                className: "menu-item",
+                image: ClamChowder,
+                description:
+                  "A creamy soup made with clams, potatoes, onions, and celery. Served with oyster crackers.",
+              },
+              {
+                name: "French Onion",
+                price: "$9",
+                className: "menu-item",
+                image: FrenchOnion,
+                description:
+                  "A rich beef broth filled with caramelized onions and topped with melted cheese and croutons.",
+              },
+              {
+                name: "Tomato Basil",
+                price: "$7",
+                className: "menu-item",
+                image: TomatoBasil,
+                description:
+                  "A classic tomato soup made with ripe tomatoes, fresh basil, and a touch of cream. Served with a grilled cheese sandwich.",
+              },
+            ]}
+          />
         </CustomTabPanel>
       </CustomTabPanel>
+
       <CustomTabPanel value={value} index={1}>
         <Tabs
           value={nestedValueItemTwo}
@@ -354,7 +438,19 @@ export default function Menu() {
         </Tabs>
 
         <CustomTabPanel value={nestedValueItemTwo} index={0}>
-          <MenuItemContent category="Specials" items={[]} />
+          <MenuItemContent
+            category="Specials"
+            items={[
+              {
+                name: "Meat Raviolli",
+                price: "$18",
+                className: "menu-item",
+                image: MeatRavioli,
+                description:
+                  "Delicious ravioli stuffed with ground beef, Parmesan cheese, and Italian herbs. Served with marinara sauce and garlic bread.",
+              },
+            ]}
+          />
         </CustomTabPanel>
 
         <CustomTabPanel value={nestedValueItemTwo} index={1}>
@@ -449,19 +545,33 @@ export default function Menu() {
                 name: "Meat Raviolli",
                 price: "$18",
                 className: "menu-item",
-                description: "Click for more information",
                 image: MeatRavioli,
-                description2:
-                  "Transport yourself to the heart of Italy with our Beef Ravioli, a sumptuous dish that embodies the essence of Italian cuisine. Each handmade pasta parcel is filled with a savory blend of seasoned ground beef, fresh herbs, and creamy ricotta cheese, creating a harmonious marriage of flavors. Topped with a vibrant tomato sauce, fragrant basil, and a sprinkle of Parmesan cheese, every bite is a celebration of tradition and taste. Served alongside a crisp green salad and a glass of robust red wine, this classic dish invites you to savor the simple pleasures of Italian cooking. Buon appetito!",
+                description:
+                  "Delicious ravioli stuffed with ground beef, Parmesan cheese, and Italian herbs. Served with marinara sauce and garlic bread.",
               },
               {
                 name: "Risotto",
                 price: "$16",
                 className: "menu-item",
-                description: "Click for more information",
                 image: Risotto,
-                description2:
-                  "Embark on a culinary journey to Italy with our Risotto ai Funghi, a velvety Arborio rice dish infused with the earthy richness of wild mushrooms. Each spoonful reveals layers of flavor, from the nutty aroma of Parmesan cheese to the subtle hint of garlic and white wine. Slow-cooked to creamy perfection and finished with a drizzle of truffle oil and a sprinkle of fresh parsley, this classic Italian comfort food is a testament to simplicity and sophistication.",
+                description:
+                  "Creamy Arborio rice cooked with white wine, Parmesan cheese, and a medley of wild mushrooms. Finished with a drizzle of truffle oil and fresh parsley.",
+              },
+              {
+                name: "Cacciatora",
+                price: "$15",
+                className: "menu-item",
+                image: Cacciatora,
+                description:
+                  "Juicy chicken pieces simmered in a flavorful tomato sauce with bell peppers, onions, mushrooms, and Italian herbs. Served over a bed of pasta or with crusty bread for dipping.",
+              },
+              {
+                name: "Lasagna",
+                price: "$12",
+                className: "menu-item",
+                image: LasagnaImg,
+                description:
+                  "Layers of pasta, seasoned ground beef, Italian sausage, fresh vegetables, Bolognese sauce, béchamel, topped with melted mozzarella and Parmesan.",
               },
             ]}
           />

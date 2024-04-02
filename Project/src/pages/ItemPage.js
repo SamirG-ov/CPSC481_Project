@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
 
 const ItemPage = () => {
   const navigate = useNavigate();
@@ -24,9 +23,6 @@ const ItemPage = () => {
     // For simplicity, let's assume a global variable 'cart' to store cart items
     const cartItem = { item, quantity };
     window.cart = window.cart ? [...window.cart, cartItem] : [cartItem];
-
-    // Display success message
-    alert(`${quantity} ${item.name}(s) added to cart`);
 
     // Redirect to menu page
     navigate("/menu");
