@@ -1,18 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import NavBar from "../components/navBar";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const Assistance = () => {
   return (
-    <div
-      style={{
-        position: "absolute",
-        top: 0,
-        left: 0,
-        width: "100%",
-        marginTop: "10px",
-      }}
-    >
+    <div>
       <NavBar />
       <div
         style={{
@@ -51,20 +44,20 @@ const Assistance = () => {
         </p>
       </div>
       <footer style={{ textAlign: "center", paddingBottom: "20px" }}>
-        <Link to="/" stlye={{ textDecoration: "none" }}>
-          <button
-            type="button"
-            style={{
-              padding: "20px 30px",
-              fontSize: "16px",
-              marginTop: "150px",
-              backgroundColor: "#FFFF8F",
-              color: "red",
-            }}
-          >
-            X CANCEL REQUEST X
-          </button>
-        </Link>
+        <button
+          type="button"
+          style={{
+            padding: "20px 30px",
+            fontSize: "16px",
+            marginTop: "150px",
+            backgroundColor: "#FFFF8F",
+            color: "red",
+          }}
+          onClick={() => window.history.back()}
+        >
+          <FontAwesomeIcon icon={faTimes} /> CANCEL REQUEST{" "}
+          <FontAwesomeIcon icon={faTimes} />
+        </button>
       </footer>
     </div>
   );
