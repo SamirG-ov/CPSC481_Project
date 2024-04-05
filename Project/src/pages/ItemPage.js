@@ -125,7 +125,6 @@ const ItemPage = () => {
           <button
             type="button"
             className="add-to-cart-button"
-            style={{ width: "180px", justifyContent: "space-evenly" }}
             onClick={addToOrder}
           >
             <FontAwesomeIcon icon={faPlusCircle} />
