@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Typography from "@mui/material/Typography";
+import MenuItemQuantity from "../components/menuItemQuantity";
+import BackButton from "../components/backButton";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faPlusCircle,
+  faArrowAltCircleLeft,
+} from "@fortawesome/free-solid-svg-icons";
 
 const ItemPage = () => {
   const navigate = useNavigate();
@@ -8,14 +15,8 @@ const ItemPage = () => {
   const { item } = location.state || {};
   const [quantity, setQuantity] = useState(1); // Initialize quantity with 1
 
-  const increaseQuantity = () => {
-    setQuantity(quantity + 1);
-  };
-
-  const decreaseQuantity = () => {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
-    }
+  const handleQuantityChange = (newQuantity) => {
+    setQuantity(newQuantity);
   };
 
   const addToOrder = () => {
@@ -39,37 +40,33 @@ const ItemPage = () => {
         style={{
           display: "flex",
           justifyContent: "center",
-          paddingTop: "20px",
-          height: "400px",
+          height: "330px",
           backgroundImage: `url(${item.image})`,
+          backgroundSize: "contain",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          backgroundBlendMode: "normal",
         }}
-      />
+      >
+        <BackButton />
+      </header>
       <div style={{ padding: "0px 20px 0px 20px" }}>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <h1 style={{ color: "#148014" }}>{item.name}</h1>
 
-          <div style={{ paddingTop: "35px" }}>
-            <button
-              type="button"
-              style={{ backgroundColor: "#148014", color: "white" }}
-              className="quantity-button"
-              onClick={decreaseQuantity}
-            >
-              -
-            </button>
-            <span style={{ padding: "5px" }}>{quantity}</span>
-            <button
-              type="button"
-              style={{ backgroundColor: "#148014", color: "white" }}
-              className="quantity-button"
-              onClick={increaseQuantity}
-            >
-              +
-            </button>
+          <div
+            style={{ marginTop: "10px", display: "flex", alignItems: "center" }}
+          >
+            <MenuItemQuantity
+              item={item}
+              onQuantityChange={handleQuantityChange}
+            />
           </div>
         </div>
         <h2>{item.price}.00</h2>
-        <Typography variant="body1">{item.description}</Typography>
+        <Typography variant="body1" sx={{ fontSize: "20px" }}>
+          {item.description}
+        </Typography>
 
         <div style={{ paddingTop: "20px" }}>
           <label
@@ -77,6 +74,7 @@ const ItemPage = () => {
               alignSelf: "start",
               paddingTop: "30px",
               paddingBottom: "5px",
+              fontSize: "20px",
             }}
             // htmlFor={`special-notes-${index}`}
           >
@@ -88,9 +86,10 @@ const ItemPage = () => {
               // name={`special-notes-${index}`}
               // value={cartItem.notes || ""}
               // onChange={(event) => handleNotesChange(event, index)}
-              rows="5"
+              rows="4"
               cols="155"
               placeholder="Add any special requests here."
+              style={{ fontSize: "20px" }}
             />
           </div>
         </div>
@@ -106,19 +105,30 @@ const ItemPage = () => {
           <div>
             <button
               type="button"
-              className="back-button"
+              className="view-cart"
+              style={{
+                backgroundColor: "white",
+                color: "green",
+                border: "2px solid green",
+                boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.5)",
+                width: "210px",
+                justifyContent: "space-evenly",
+                fontSize: "20px",
+              }}
               onClick={() => navigate("/menu")}
             >
-              Continue Browsing
+              <FontAwesomeIcon icon={faArrowAltCircleLeft} />
+              Go Back to Menu
             </button>
           </div>
 
           <button
             type="button"
-            style={{ width: "500px" }}
-            className="order-button"
+            className="add-to-cart-button"
+            style={{ width: "180px", justifyContent: "space-evenly" }}
             onClick={addToOrder}
           >
+            <FontAwesomeIcon icon={faPlusCircle} />
             Add to Order
           </button>
         </div>

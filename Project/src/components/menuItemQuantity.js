@@ -1,56 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 
-function MenuItemQuantity({ item }) {
-  const [quantity, setQuantity] = useState(0); // Initialize quantity with 0
+function MenuItemQuantity({ item, onQuantityChange }) {
   const location = useLocation();
-  const { menuItem } = location.state || {};
+  const isMenuPage = location.pathname === "/menu";
+  const [quantity, setQuantity] = useState(0); // Initialize quantity with 0
 
-  // TODO: Implement logic to add or remove item from cart
+  useEffect(() => {
+    if (!isMenuPage) {
+      setQuantity(1);
+    }
+  }, [isMenuPage]);
+
   const increaseQuantity = () => {
     setQuantity(quantity + 1);
-    // addToOrder(quantity + 1);
+    onQuantityChange(quantity + 1);
   };
 
   const decreaseQuantity = () => {
-    if (quantity >= 1) {
+    if (quantity > 1 && !isMenuPage) {
       setQuantity(quantity - 1);
-      //   removefromOrder();
-    }
-  };
-
-  const addToOrder = (newQuantity) => {
-    // Implement logic to add item to cart
-    // Check if the item already exists in the cart
-    const existingCartItemIndex = window.cart
-      ? window.cart.findIndex(
-          (cartItem) => cartItem.item.name === menuItem.name
-        )
-      : -1;
-
-    if (existingCartItemIndex !== -1) {
-      // If the item exists, update its quantity
-      window.cart[existingCartItemIndex].quantity = newQuantity;
-    } else {
-      // If the item doesn't exist, add it to the cart
-      const cartItem = { menuItem, quantity: newQuantity };
-      window.cart = window.cart ? [...window.cart, cartItem] : [cartItem];
-    }
-  };
-
-  const removefromOrder = () => {
-    // Implement logic to remove item from cart
-    if (window.cart) {
-      const index = window.cart.findIndex(
-        (cartItem) => cartItem.item.name === menuItem.name
-      );
-      if (index !== -1) {
-        const newCart = [...window.cart];
-        newCart.splice(index, 1);
-        window.cart = newCart;
-      }
+      onQuantityChange(quantity - 1);
+    } else if (quantity > 0 && isMenuPage) {
+      setQuantity(quantity - 1);
+      onQuantityChange(quantity - 1);
     }
   };
 

@@ -46,7 +46,7 @@ const FloatingButton = () => {
         style={{
           backgroundColor: "white",
           color: "green",
-          border: "1px solid green",
+          border: "2px solid green",
           boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.5)",
         }}
         onClick={() => navigate("trackOrder")}

@@ -1,12 +1,11 @@
-import React, { useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import MenuItemQuantity from "./menuItemQuantity";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const MenuItemContent = ({ category, items }) => {
   const navigate = useNavigate();
-  const location = useLocation();
   const [searchTerm, setSearchTerm] = React.useState(""); //TODO: Add state to store the search term
 
   const handleAddItemClick = (item) => {
@@ -16,6 +15,9 @@ const MenuItemContent = ({ category, items }) => {
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
   };
+
+  // TODO: Implement logic to add item to cart
+  const handleQuantityChange = (newQuantity) => {};
 
   return (
     <div>
@@ -64,7 +66,10 @@ const MenuItemContent = ({ category, items }) => {
               <p style={{ fontSize: "20px", fontWeight: "bold" }}>
                 {item.price}.00
               </p>
-              <MenuItemQuantity item={item} />
+              <MenuItemQuantity
+                item={item}
+                onQuantityChange={handleQuantityChange}
+              />
             </div>
           </div>
           <div

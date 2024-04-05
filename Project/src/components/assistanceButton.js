@@ -18,7 +18,7 @@ const AssistanceButton = () => {
     <button
       type="button"
       className="view-cart"
-      style={{ width: "170px", backgroundColor: "darkorange" }}
+      style={{ width: "180px", backgroundColor: "darkorange" }}
       onClick={() => handleClick()}
     >
       <FontAwesomeIcon icon={faPhone} />
