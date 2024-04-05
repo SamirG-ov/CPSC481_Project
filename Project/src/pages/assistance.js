@@ -1,15 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import NavBar from "../components/navBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import Modal from "../components/confirmationModal";
 
 const Assistance = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleCancelClick = () => {
+    setShowModal(true);
+  };
+
+  const handleConfirmCancel = () => {
+    setShowModal(false);
+    window.history.back();
+  };
+
+  const handleDismissModal = () => {
+    setShowModal(false);
+  };
+
   return (
-    <div>
+    <div style={{ fontFamily: "Arial, sans-serif" }}>
       <NavBar />
       <div
         style={{
-          backgroundColor: "#CD5C5C",
+          backgroundColor: "green",
           width: "400px",
           height: "200px",
           marginTop: "75px",
@@ -18,47 +34,68 @@ const Assistance = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          borderRadius: "10px",
+          padding: "20px",
         }}
       >
-        <p
+        <h1
           style={{
-            color: "black",
+            color: "white",
             textAlign: "center",
-            fontSize: "30px",
             fontWeight: "bold",
           }}
         >
           Assistance Required
-        </p>
+        </h1>
       </div>
       <div>
-        <p
+        <h1
           style={{
-            fontSize: "20px",
             fontWeight: "bold",
             textAlign: "center",
             marginTop: "60px",
+            textDecoration: "underline green",
           }}
         >
           Someone will be with you shortly!
-        </p>
+        </h1>
       </div>
-      <footer style={{ textAlign: "center", paddingBottom: "20px" }}>
+      <footer
+        style={{
+          textAlign: "center",
+          paddingBottom: "20px",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
         <button
           type="button"
+          className="view-cart"
           style={{
-            padding: "20px 30px",
-            fontSize: "16px",
-            marginTop: "150px",
-            backgroundColor: "#FFFF8F",
-            color: "red",
+            marginTop: "50px",
+            backgroundColor: "red",
+            width: "280px",
+            justifyContent: "space-evenly",
+            padding: "10px",
+            borderRadius: "5px",
+            display: "flex",
+            alignItems: "center",
           }}
-          onClick={() => window.history.back()}
+          onClick={handleCancelClick}
         >
           <FontAwesomeIcon icon={faTimes} /> CANCEL REQUEST{" "}
           <FontAwesomeIcon icon={faTimes} />
         </button>
       </footer>
+
+      {showModal && (
+        <Modal
+          title="Confirm Request Cancellation"
+          message="Are you sure you want to cancel the request for assistance?"
+          onConfirm={handleConfirmCancel}
+          onDismiss={handleDismissModal}
+        />
+      )}
     </div>
   );
 };
