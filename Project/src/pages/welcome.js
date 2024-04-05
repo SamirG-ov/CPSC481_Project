@@ -8,10 +8,10 @@ const Welcome = () => {
   let meal;
   let time;
 
-  if (currentHour < 6 || currentHour >= 22) {
+  if (currentHour < 10 || currentHour >= 22) {
     meal = "Closed";
     time = "10:00 pm — 10:00 am";
-  } else if (currentHour < 17) {
+  } else if (currentHour < 16) {
     meal = "Lunch";
     time = "10:00 am — 4:00 pm";
   } else {

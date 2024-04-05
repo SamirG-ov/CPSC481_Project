@@ -2,7 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmarkCircle } from "@fortawesome/free-solid-svg-icons";
 
-function Modal({ title, message, onConfirm, onDismiss }) {
+function Modal({ title, message, onConfirm, onDismiss, showButtons = true }) {
   return (
     <div
       style={{
@@ -41,33 +41,35 @@ function Modal({ title, message, onConfirm, onDismiss }) {
         >
           <FontAwesomeIcon icon={faXmarkCircle} />
         </button>
-        <h2>{title}</h2>
+        <h2 style={{ color: "green" }}>{title}</h2>
         <p style={{ fontSize: "20px", width: "500px" }}>{message}</p>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <button
-            type="button"
-            className="view-cart"
-            style={{
-              backgroundColor: "gray",
-              display: "flex",
-              justifyContent: "center",
-            }}
-            onClick={onDismiss}
-          >
-            Dismiss
-          </button>
-          <button
-            type="button"
-            className="view-cart"
-            style={{
-              display: "flex",
-              justifyContent: "center",
-            }}
-            onClick={onConfirm}
-          >
-            Confirm
-          </button>
-        </div>
+        {showButtons && (
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <button
+              type="button"
+              className="view-cart"
+              style={{
+                backgroundColor: "gray",
+                display: "flex",
+                justifyContent: "center",
+              }}
+              onClick={onDismiss}
+            >
+              Dismiss
+            </button>
+            <button
+              type="button"
+              className="view-cart"
+              style={{
+                display: "flex",
+                justifyContent: "center",
+              }}
+              onClick={onConfirm}
+            >
+              Confirm
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

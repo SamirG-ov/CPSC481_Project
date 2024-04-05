@@ -1,19 +1,30 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import NavBar from "../components/navBar";
+import Modal from "../components/confirmationModal";
 
 const Feedback = () => {
   const [feedback, setFeedback] = useState("");
   const navigate = useNavigate();
+  const location = useLocation();
+  const isMenuPage = location.pathname === "/menu";
+  const [showModal, setShowModal] = useState(false);
 
   const handleSubmit = (event) => {
+    setShowModal(true);
     event.preventDefault();
-    console.log("Feedback submitted:", feedback);
-    alert("Thank you for your feedback");
-    navigate("/");
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+    if (!isMenuPage) {
+      navigate("/");
+    } else {
+      window.location.reload();
+    }
   };
 
   function CustomTabPanel(props) {
@@ -70,16 +81,18 @@ const Feedback = () => {
             borderRadius: "5px",
           }}
         >
-          <h2 style={{ textAlign: "center", margin: "0 0 20px" }}>
+          <h1
+            style={{ textAlign: "center", margin: "0 0 20px", color: "green" }}
+          >
             Feedback Form
-          </h2>
+          </h1>
           <form onSubmit={handleSubmit}>
             <label
               htmlFor="feedback"
               style={{
                 display: "block",
                 marginBottom: "10px",
-                fontSize: "1.2em",
+                fontSize: "20px",
               }}
             >
               Your Feedback:
@@ -97,6 +110,7 @@ const Feedback = () => {
                 border: "1px solid #ccc",
                 borderRadius: "5px",
                 resize: "none",
+                fontSize: "20px",
               }}
               rows="5"
               required
@@ -107,7 +121,7 @@ const Feedback = () => {
                 display: "block",
                 width: "100%",
                 padding: "10px",
-                fontSize: "1.2em",
+                fontSize: "20px",
                 backgroundColor: "#148014",
                 color: "#fff",
                 border: "none",
@@ -118,6 +132,14 @@ const Feedback = () => {
               Submit
             </button>
           </form>
+          {showModal && (
+            <Modal
+              title="Feedback Submitted"
+              message="Thank you for your feedback!"
+              onDismiss={handleCloseModal}
+              showButtons={false}
+            />
+          )}
         </div>
       </div>
     </div>
