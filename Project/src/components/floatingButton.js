@@ -13,6 +13,12 @@ const FloatingButton = () => {
   // Retrieve cart items from the global variable
   const cartItems = window.cart || [];
 
+  // Calculate the total quantity of items in the cart
+  const totalQuantity = cartItems.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
+
   return isMenuPage ? (
     <div style={{ display: "flex", flexDirection: "row" }}>
       <button
@@ -31,7 +37,7 @@ const FloatingButton = () => {
             padding: "1px",
           }}
         >
-          {cartItems.length}
+          {totalQuantity}
         </div>
       </button>
       <button
