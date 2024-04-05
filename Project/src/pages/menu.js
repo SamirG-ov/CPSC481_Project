@@ -64,8 +64,10 @@ function a11yProps(index) {
 export default function Menu() {
   // const navigate = useNavigate();
   const location = useLocation(); //TODO: use this to get the meal type
+  const params = new URLSearchParams(location.search);
+  const initialTab = parseInt(params.get("tab")) || 0; // Parse the tab parameter from the URL
 
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(initialTab);
   const [nestedValue, setNestedValue] = React.useState(0);
   const [nestedValueItemTwo, setNestedValueItemTwo] = React.useState(0);
 
