@@ -8,8 +8,7 @@ import Box from "@mui/material/Box";
 import MenuItemContent from "../components/menuItemContent";
 import Feedback from "./feedback";
 import "../styles/menu.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import BackButton from "../components/backButton";
 
 import LasagnaImg from "../assets/lasagna.jpg";
 import ParmChicken from "../assets/parmChicken.jpg";
@@ -92,26 +91,7 @@ export default function Menu() {
   return (
     <div>
       <header style={{ display: "flex", justifyContent: "center" }}>
-        <div
-          style={{
-            position: "fixed",
-            left: "0",
-          }}
-        >
-          <button
-            style={{
-              color: "black",
-              border: "none",
-              borderRadius: "100px",
-              cursor: "pointer",
-              fontSize: "30px",
-            }}
-            type="button"
-            onClick={() => window.history.back()}
-          >
-            <FontAwesomeIcon icon={faArrowLeft} />
-          </button>
-        </div>
+        <BackButton />
         <div className="logo">
           <h1 style={{ fontSize: "40px", margin: "20px 0px 5px 0px" }}>
             <span style={{ color: "red" }}>X</span>
