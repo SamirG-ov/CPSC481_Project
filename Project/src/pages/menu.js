@@ -27,7 +27,12 @@ import Minestrone from "../assets/minestrone.jpg";
 import ClamChowder from "../assets/clamChowder.jpg";
 import FrenchOnion from "../assets/frenchOnion.jpg";
 import TomatoBasil from "../assets/tomatoBasil.jpg";
-
+import RibSteak from "../assets/RibSteak.jpg";
+import Charcuterie from "../assets/Charcuterie.jpg";
+import Focaccia from "../assets/Focaccia.jpg";
+import Caprese from "../assets/Caprese.jpg";
+import Mussels from "../assets/mussels.jpg";
+import Arancini from "../assets/Arancini.jpg";
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -431,12 +436,63 @@ export default function Menu() {
                 description:
                   "Delicious ravioli stuffed with ground beef, Parmesan cheese, and Italian herbs. Served with marinara sauce and garlic bread.",
               },
+              {
+                name: "Ribeye Steak",
+                price: "$30",
+                className: "menu-item",
+                image: RibSteak,
+                description:
+                  "Butter-basted 36 oz. Ribeye Steak served with 2 of our delicious sides of your choice."
+              },
+              {
+                name: "Charcuterie Board",
+                price: "$20",
+                className: "menu-item",
+                image: Charcuterie,
+                description:
+                  "Enjoy our most premium selection of meat cold cuts and cheeses, served with olives, saltines, and more flavor enhancers for best experience."
+              }
             ]}
           />
         </CustomTabPanel>
 
         <CustomTabPanel value={nestedValueItemTwo} index={1}>
-          <MenuItemContent category="Appetizers" items={[]} />
+          <MenuItemContent category="Appetizers" 
+          items={[
+            {
+              name: "Focaccia Bread",
+              price: "$15",
+              className: "menu-item",
+              image: Focaccia,
+              description:
+                "Enjoy our perfectly baked Focaccia bread drizzled with our premium olive oil. Served with olives."
+            },
+            {
+              name: "Caprese Salad",
+              price: "$15",
+              className: "menu-item",
+              image: Caprese,
+              description:
+                "Enjoy our fresh Caprese salad served with tomato, our finest mozzarella, basil, black olives, and a drizzle of premium olive oil."
+            },
+            {
+              name: "Mussels",
+              price: "$20",
+              className: "menu-item",
+              image: Mussels,
+              description:
+                "Enjoy our fresh mussels served in a delicious hearty broth and garnished with fresh basil."
+            },
+            {
+              name: "Arancini",
+              price: "$18",
+              className: "menu-item",
+              image: Arancini,
+              description:
+                "Enjoy our delicious risotto balls stuffed with prosciutto and mozzarella cheese."
+            }
+
+          ]} />
         </CustomTabPanel>
 
         <CustomTabPanel value={nestedValueItemTwo} index={2}>
