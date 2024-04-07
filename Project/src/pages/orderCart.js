@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect  } from "react";
 import { useNavigate } from "react-router-dom";
 
 import "../styles/orderCart.css";
@@ -31,6 +31,27 @@ const OrderCart = () => {
     );
   };
 
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+  }, [cartItems]);
+
+  const handleDeleteItem = (index) => {
+    // Create a new array excluding the item at the specified index
+    const updatedCartItems = cartItems.filter((_, i) => i !== index);
+    setCartItems(updatedCartItems);
+  };
+
+  const handleQuantityChange = (index, newQuantity) => {
+    // Create a new array with the quantity updated for the item at the specified index
+    const updatedCartItems = cartItems.map((item, i) => {
+      if (i === index) {
+        return { ...item, quantity: newQuantity };
+      }
+      return item;
+    });
+    setCartItems(updatedCartItems);
+  };
+
   const handleBackToMenu = () => {
     navigate("/menu");
   };
@@ -38,6 +59,7 @@ const OrderCart = () => {
   const handleTrackOrder = () => {
     navigate("/trackOrder");
   };
+  
 
   return (
     <div>
@@ -84,7 +106,8 @@ const OrderCart = () => {
                         type="button"
                         onClick={() => {
                           const updatedCartItems = [...cartItems];
-                          updatedCartItems.splice(index, 1);
+                          cartItems.splice(index);
+                          updatedCartItems.splice(index);
                           setCartItems(updatedCartItems);
                         }}
                       >

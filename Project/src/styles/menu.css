@@ -102,6 +102,14 @@ img {
   align-items: center;
 }
 
+.star-filled {
+  color: gold; /* Color of filled stars */
+}
+
+.star-empty {
+  color: lightgray; /* Color of empty stars */
+}
+
 input[type="search"] {
   background-position: 10px 10px;
   background-repeat: no-repeat;

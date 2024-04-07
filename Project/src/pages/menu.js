@@ -525,6 +525,7 @@ export default function Menu() {
             items={[
               {
                 name: "Meat Raviolli",
+                rating: "4",
                 price: "$18",
                 className: "menu-item",
                 image: MeatRavioli,
@@ -533,6 +534,7 @@ export default function Menu() {
               },
               {
                 name: "Risotto",
+                rating: "3",
                 price: "$16",
                 className: "menu-item",
                 image: Risotto,
@@ -541,6 +543,7 @@ export default function Menu() {
               },
               {
                 name: "Cacciatora",
+                rating: "5",
                 price: "$15",
                 className: "menu-item",
                 image: Cacciatora,
@@ -550,6 +553,7 @@ export default function Menu() {
               {
                 name: "Lasagna",
                 price: "$12",
+                rating: "4",
                 className: "menu-item",
                 image: LasagnaImg,
                 description:

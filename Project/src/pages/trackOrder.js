@@ -59,6 +59,7 @@ const TrackOrder = () => {
 
   const handleReturnItem = (index) => {
     const updatedCartItems = [...cartItems];
+    cartItems.splice(index);
     updatedCartItems.splice(index, 1);
     setCartItems(updatedCartItems);
   };

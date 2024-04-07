@@ -59,6 +59,13 @@ const MenuItemContent = ({ category, items }) => {
             >
               {item.name}
             </h3>
+            {item.rating > 0 &&
+            <div>
+              {[...Array(5)].map((_, i) => (
+                <span key={i} className={i < item.rating ? 'star-filled' : 'star-empty'}>&#9733;</span>
+              ))}
+            </div>
+            } 
             <p style={{ margin: "0px", fontSize: "20px" }}>
               {item.description}
             </p>
@@ -74,7 +81,7 @@ const MenuItemContent = ({ category, items }) => {
           </div>
           <div
             style={{
-              height: "20vh",
+              height: "23vh",
               display: "flex",
               alignItems: "flex-end",
             }}
