@@ -33,6 +33,14 @@ import Focaccia from "../assets/Focaccia.jpg";
 import Caprese from "../assets/Caprese.jpg";
 import Mussels from "../assets/mussels.jpg";
 import Arancini from "../assets/Arancini.jpg";
+import Carbonara from "../assets/Carbonara.jpg";
+import SeafoodPasta from "../assets/SeafoodPasta.jpg";
+import mushroomRisotto from "../assets/mushroomRisotto.jpg";
+import salmonRisotto from "../assets/salmonRisotto.jpg";
+import tiramisu from "../assets/tiramisu.jpg";
+import Cannoli from "../assets/Cannoli.jpg";
+import Affogato from "../assets/Affogato.jpg";
+
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -450,7 +458,7 @@ export default function Menu() {
                 className: "menu-item",
                 image: Charcuterie,
                 description:
-                  "Enjoy our most premium selection of meat cold cuts and cheeses, served with olives, saltines, and more flavor enhancers for best experience."
+                  "Enjoy our premium selection of meat cold cuts and cheeses, served with olives, saltines, and more flavor enhancers for best experience."
               }
             ]}
           />
@@ -496,11 +504,71 @@ export default function Menu() {
         </CustomTabPanel>
 
         <CustomTabPanel value={nestedValueItemTwo} index={2}>
-          <MenuItemContent category="Main Courses" items={[]} />
+          <MenuItemContent category="Main Courses" 
+          items={[
+            {
+              name: "Carbonara Pasta",
+              price: "$20",
+              className: "menu-item",
+              image: Carbonara,
+              description:
+                "Delicous creamy Carbonara made with with our finest pancetta and parmesan cheese."
+            },
+            {
+              name: "Seafood Pasta",
+              price: "$23",
+              className: "menu-item",
+              image: SeafoodPasta,
+              description:
+                "Enjoy our delicious seafood pasta served with mussles, shrimp, calamari, cherry tomatoes, and our special seafood based tomato sauce."
+            },
+            {
+              name: "Mushroom Risotto",
+              price: "$21",
+              className: "menu-item",
+              image: mushroomRisotto,
+              description:
+                "Creamy and savoury mushroom risotto made with our finest selectionj of wild mushrooms and topped with parsley and parmigiano."
+            },
+            {
+              name: "Salmon Risotto",
+              price: "$23",
+              className: "menu-item",
+              image: salmonRisotto,
+              description:
+                "Top-grade grilled salmon on a bed of creamy, zesty risotto."
+            }
+          ]} />
         </CustomTabPanel>
 
         <CustomTabPanel value={nestedValueItemTwo} index={3}>
-          <MenuItemContent category="Desserts" items={[]} />
+          <MenuItemContent category="Desserts" 
+          items={[
+            {
+              name: "Tiramisu",
+              price: "$13",
+              className: "menu-item",
+              image: tiramisu,
+              description:
+                "Freshly-brewed coffee, lady fingers, and cream."
+            },
+            {
+              name: "Sicilian Cannoli",
+              price: "$9",
+              className: "menu-item",
+              image: Cannoli,
+              description:
+                "Fried Cannoli stuffed with chocolate, creamy ricotta cheese, and pistachios. Finished off with powdered sugar and pistachio."
+            },
+            {
+              name: "Affogato",
+              price: "$10",
+              className: "menu-item",
+              image: Affogato,
+              description:
+                "Enjoy our house made vanilla icecream covered with a drizzling of espresso."
+            }
+          ]} />
         </CustomTabPanel>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
