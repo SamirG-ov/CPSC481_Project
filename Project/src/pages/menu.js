@@ -35,11 +35,18 @@ import Mussels from "../assets/mussels.jpg";
 import Arancini from "../assets/Arancini.jpg";
 import Carbonara from "../assets/Carbonara.jpg";
 import SeafoodPasta from "../assets/SeafoodPasta.jpg";
-import mushroomRisotto from "../assets/mushroomRisotto.jpg";
-import salmonRisotto from "../assets/salmonRisotto.jpg";
-import tiramisu from "../assets/tiramisu.jpg";
+import MushroomRisotto from "../assets/mushroomRisotto.jpg";
+import SalmonRisotto from "../assets/salmonRisotto.jpg";
+import Tiramisu from "../assets/tiramisu.jpg";
 import Cannoli from "../assets/Cannoli.jpg";
 import Affogato from "../assets/Affogato.jpg";
+import Italiansoda from "../assets/italiansoda.jpg";
+import Soda from "../assets/soda.jpg";
+import Coffee from "../assets/coffee.jpg";
+import Negroni from "../assets/negroni.jpg";
+import Bellini from "../assets/bellini.jpg";
+import Spritz from "../assets/spritz.jpg";
+import Wine from "../assets/wine.jpg";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -234,6 +241,7 @@ export default function Menu() {
                 name: "Lasagna",
                 price: "$12",
                 className: "menu-item",
+                rating: "4",
                 image: LasagnaImg,
                 description:
                   "Layers of pasta, seasoned ground beef, Italian sausage, fresh vegetables, Bolognese sauce, béchamel, topped with melted mozzarella and Parmesan.",
@@ -242,6 +250,7 @@ export default function Menu() {
                 name: "Chicken Parmesan",
                 price: "$16",
                 className: "menu-item",
+                rating: "4",
                 image: ParmChicken,
                 description:
                   "Breaded chicken breast topped with marinara sauce and melted mozzarella cheese. Served with a side of spaghetti.",
@@ -250,6 +259,7 @@ export default function Menu() {
                 name: "Cacciatora",
                 price: "$15",
                 className: "menu-item",
+                rating: "4",
                 image: Cacciatora,
                 description:
                   "Juicy chicken pieces simmered in a flavorful tomato sauce with bell peppers, onions, mushrooms, and Italian herbs. Served over a bed of pasta or with crusty bread for dipping.",
@@ -258,6 +268,7 @@ export default function Menu() {
                 name: "Risotto",
                 price: "$16",
                 className: "menu-item",
+                rating: "3",
                 image: Risotto,
                 description:
                   "Creamy Arborio rice cooked with white wine, Parmesan cheese, and a medley of wild mushrooms. Finished with a drizzle of truffle oil and fresh parsley.",
@@ -274,6 +285,7 @@ export default function Menu() {
                 name: "Nachos",
                 price: "$10",
                 className: "menu-item",
+                rating: "3",
                 image: Nachos,
                 description:
                   "Tortilla chips smothered in melted cheese, topped with jalapenos, black olives, and sour cream.",
@@ -282,6 +294,7 @@ export default function Menu() {
                 name: "Chicken Wings",
                 price: "$12",
                 className: "menu-item",
+                rating: "4",
                 image: ChickenWings,
                 description:
                   "Crispy chicken wings tossed in your choice of sauce: Buffalo, BBQ, or Teriyaki. Served with celery sticks and ranch or blue cheese dressing.",
@@ -290,6 +303,7 @@ export default function Menu() {
                 name: "Mozzarella Sticks",
                 price: "$8",
                 className: "menu-item",
+                rating: "3",
                 image: MozzarellaSticks,
                 description:
                   "Golden fried mozzarella sticks served with marinara sauce for dipping.",
@@ -298,6 +312,7 @@ export default function Menu() {
                 name: "Garlic Bread",
                 price: "$6",
                 className: "menu-item",
+                rating: "4",
                 image: GarlicBread,
                 description:
                   "Toasted French bread topped with garlic butter. Served with marinara sauce.",
@@ -314,6 +329,7 @@ export default function Menu() {
                 name: "Chicken Alfredo",
                 price: "$18",
                 className: "menu-item",
+                rating: "4",
                 image: ChickenAlfredo,
                 description:
                   "Grilled chicken breast served over fettuccine pasta tossed in creamy Alfredo sauce. Served with garlic bread.",
@@ -322,6 +338,7 @@ export default function Menu() {
                 name: "Spaghetti and Meatballs",
                 price: "$21",
                 className: "menu-item",
+                rating: "4",
                 image: Spaghetti,
                 description:
                   "Spaghetti smothered in rich marinara sauce and topped with savory meatballs. Served with garlic bread.",
@@ -330,6 +347,7 @@ export default function Menu() {
                 name: "Shrimp Scampi",
                 price: "$22",
                 className: "menu-item",
+                rating: "5",
                 image: ShrimpScampi,
                 description:
                   "Tender shrimp sautéed in garlic butter and white wine, served over a bed of linguine. Served with garlic bread.",
@@ -338,6 +356,7 @@ export default function Menu() {
                 name: "Vegetable Stir-Fry",
                 price: "$15",
                 className: "menu-item",
+                rating: "3",
                 image: VegetableStirFry,
                 description:
                   "Fresh vegetables stir-fried in a savory sauce, served over steamed rice.",
@@ -354,6 +373,7 @@ export default function Menu() {
                 name: "Minestrone",
                 price: "$8",
                 className: "menu-item",
+                rating: "5",
                 image: Minestrone,
                 description:
                   "A hearty vegetable soup made with tomatoes, beans, pasta, and seasonal vegetables. Served with crusty bread.",
@@ -362,6 +382,7 @@ export default function Menu() {
                 name: "Clam Chowder",
                 price: "$10",
                 className: "menu-item",
+                rating: "4",
                 image: ClamChowder,
                 description:
                   "A creamy soup made with clams, potatoes, onions, and celery. Served with oyster crackers.",
@@ -370,6 +391,7 @@ export default function Menu() {
                 name: "French Onion",
                 price: "$9",
                 className: "menu-item",
+                rating: "4",
                 image: FrenchOnion,
                 description:
                   "A rich beef broth filled with caramelized onions and topped with melted cheese and croutons.",
@@ -378,6 +400,7 @@ export default function Menu() {
                 name: "Tomato Basil",
                 price: "$7",
                 className: "menu-item",
+                rating: "4",
                 image: TomatoBasil,
                 description:
                   "A classic tomato soup made with ripe tomatoes, fresh basil, and a touch of cream. Served with a grilled cheese sandwich.",
@@ -440,6 +463,7 @@ export default function Menu() {
                 name: "Meat Raviolli",
                 price: "$18",
                 className: "menu-item",
+                rating: "4",
                 image: MeatRavioli,
                 description:
                   "Delicious ravioli stuffed with ground beef, Parmesan cheese, and Italian herbs. Served with marinara sauce and garlic bread.",
@@ -448,6 +472,7 @@ export default function Menu() {
                 name: "Ribeye Steak",
                 price: "$30",
                 className: "menu-item",
+                rating: "5",
                 image: RibSteak,
                 description:
                   "Butter-basted 36 oz. Ribeye Steak served with 2 of our delicious sides of your choice."
@@ -456,6 +481,7 @@ export default function Menu() {
                 name: "Charcuterie Board",
                 price: "$20",
                 className: "menu-item",
+                rating: "4",
                 image: Charcuterie,
                 description:
                   "Enjoy our premium selection of meat cold cuts and cheeses, served with olives, saltines, and more flavor enhancers for best experience."
@@ -471,6 +497,7 @@ export default function Menu() {
               name: "Focaccia Bread",
               price: "$15",
               className: "menu-item",
+              rating: "4",
               image: Focaccia,
               description:
                 "Enjoy our perfectly baked Focaccia bread drizzled with our premium olive oil. Served with olives."
@@ -479,6 +506,7 @@ export default function Menu() {
               name: "Caprese Salad",
               price: "$15",
               className: "menu-item",
+              rating: "3",
               image: Caprese,
               description:
                 "Enjoy our fresh Caprese salad served with tomato, our finest mozzarella, basil, black olives, and a drizzle of premium olive oil."
@@ -487,6 +515,7 @@ export default function Menu() {
               name: "Mussels",
               price: "$20",
               className: "menu-item",
+              rating: "5",
               image: Mussels,
               description:
                 "Enjoy our fresh mussels served in a delicious hearty broth and garnished with fresh basil."
@@ -495,6 +524,7 @@ export default function Menu() {
               name: "Arancini",
               price: "$18",
               className: "menu-item",
+              rating: "4",
               image: Arancini,
               description:
                 "Enjoy our delicious risotto balls stuffed with prosciutto and mozzarella cheese."
@@ -510,6 +540,7 @@ export default function Menu() {
               name: "Carbonara Pasta",
               price: "$20",
               className: "menu-item",
+              rating: "4",
               image: Carbonara,
               description:
                 "Delicous creamy Carbonara made with with our finest pancetta and parmesan cheese."
@@ -518,6 +549,7 @@ export default function Menu() {
               name: "Seafood Pasta",
               price: "$23",
               className: "menu-item",
+              rating: "5",
               image: SeafoodPasta,
               description:
                 "Enjoy our delicious seafood pasta served with mussles, shrimp, calamari, cherry tomatoes, and our special seafood based tomato sauce."
@@ -526,7 +558,8 @@ export default function Menu() {
               name: "Mushroom Risotto",
               price: "$21",
               className: "menu-item",
-              image: mushroomRisotto,
+              rating: "4",
+              image: MushroomRisotto,
               description:
                 "Creamy and savoury mushroom risotto made with our finest selectionj of wild mushrooms and topped with parsley and parmigiano."
             },
@@ -534,7 +567,8 @@ export default function Menu() {
               name: "Salmon Risotto",
               price: "$23",
               className: "menu-item",
-              image: salmonRisotto,
+              rating: "4",
+              image: SalmonRisotto,
               description:
                 "Top-grade grilled salmon on a bed of creamy, zesty risotto."
             }
@@ -548,7 +582,8 @@ export default function Menu() {
               name: "Tiramisu",
               price: "$13",
               className: "menu-item",
-              image: tiramisu,
+              rating: "5",
+              image: Tiramisu,
               description:
                 "Freshly-brewed coffee, lady fingers, and cream."
             },
@@ -556,6 +591,7 @@ export default function Menu() {
               name: "Sicilian Cannoli",
               price: "$9",
               className: "menu-item",
+              rating: "4",
               image: Cannoli,
               description:
                 "Fried Cannoli stuffed with chocolate, creamy ricotta cheese, and pistachios. Finished off with powdered sugar and pistachio."
@@ -564,6 +600,7 @@ export default function Menu() {
               name: "Affogato",
               price: "$10",
               className: "menu-item",
+              rating: "3",
               image: Affogato,
               description:
                 "Enjoy our house made vanilla icecream covered with a drizzling of espresso."
@@ -599,11 +636,78 @@ export default function Menu() {
         </Tabs>
 
         <CustomTabPanel value={nestedValueItemThree} index={0}>
-          <MenuItemContent category="Non-Alcoholic" items={[]} />
+          <MenuItemContent category="Non-Alcoholic" 
+          items={[
+            {
+              name: "Italian soda",
+              price: "$5",
+              className: "menu-item",
+              rating: "4",
+              image: Italiansoda,
+              description:
+                "Fresh Italian soda with green mint."
+            },
+            {
+              name: "Pop soda",
+              price: "$2.50",
+              className: "menu-item",
+              rating: "3",
+              image: Soda,
+              description:
+                "Ask us about our selection."
+            },
+            {
+              name: "Coffee",
+              price: "$3",
+              className: "menu-item",
+              rating: "4",
+              image: Coffee,
+              description:
+                "Served with sugar and cream on the side."
+            }
+          ]} />
         </CustomTabPanel>
 
         <CustomTabPanel value={nestedValueItemThree} index={1}>
-          <MenuItemContent category="Alcoholic" items={[]} />
+          <MenuItemContent category="Alcoholic" 
+          items={[
+            {
+              name: "Negroni",
+              price: "$7",
+              className: "menu-item",
+              rating: "4",
+              image: Negroni,
+              description:
+                "Equal parts gin, vermouth rosso, and campari. Garnished with orange."
+            },
+            {
+              name: "Bellini",
+              price: "$6",
+              className: "menu-item",
+              rating: "4",
+              image: Bellini,
+              description:
+                "Prosecco and fresh peach purée. Garnished with peach."
+            },
+            {
+              name: "Spritz",
+              price: "$6",
+              className: "menu-item",
+              rating: "3",
+              image: Spritz,
+              description:
+                "Prosecco, bitters, and soda water. Garnished with rosemary."
+            },
+            {
+              name: "Italian wine",
+              price: "$15",
+              className: "menu-item",
+              rating: "5",
+              image: Wine,
+              description:
+                "Wine imported from Italy."
+            }
+          ]} />
         </CustomTabPanel>
       </CustomTabPanel>
 
