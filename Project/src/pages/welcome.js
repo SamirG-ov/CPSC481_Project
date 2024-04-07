@@ -43,7 +43,7 @@ const Welcome = () => {
           <div className="line small" />
         </div>
         <div className="buttons">
-          <Link to="/menu">
+        <Link to="/menu?tab=3">
             <button type="button" className="button">
               SHOW ME SOME RECOMMENDATIONS!
             </button>
