@@ -47,6 +47,8 @@ import Negroni from "../assets/negroni.jpg";
 import Bellini from "../assets/bellini.jpg";
 import Spritz from "../assets/spritz.jpg";
 import Wine from "../assets/wine.jpg";
+import Lambshank from "../assets/lambshank.jpg";
+import Pizza from "../assets/pizza.jpg";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -796,7 +798,27 @@ export default function Menu() {
         </CustomTabPanel>
 
         <CustomTabPanel value={nestedValueItemThree} index={2}>
-          <MenuItemContent category="Secret Menu" items={[]} />
+          <MenuItemContent category="Secret Menu" 
+          items={[
+            {
+              name: "Braised lamb shank",
+              price: "$30",
+              className: "menu-item",
+              rating: "5",
+              image: Lambshank,
+              description:
+                "Enjoy our 'melt off the bone' lambshank served on top of a bed of rice and finished off with chopped parsley."
+            },
+            {
+              name: "Neapolitan Pizza",
+              price: "$22",
+              className: "menu-item",
+              rating: "4",
+              image: Pizza,
+              description:
+                "Freshly baked and prepared neapolitan pizza."
+            }
+          ]} />
         </CustomTabPanel>
       </CustomTabPanel>
 
