@@ -639,7 +639,7 @@ export default function Menu() {
           <MenuItemContent category="Non-Alcoholic" 
           items={[
             {
-              name: "Italian soda",
+              name: "Italian Soda",
               price: "$5",
               className: "menu-item",
               rating: "4",
@@ -648,7 +648,7 @@ export default function Menu() {
                 "Fresh Italian soda with green mint."
             },
             {
-              name: "Pop soda",
+              name: "Pop Soda",
               price: "$2.50",
               className: "menu-item",
               rating: "3",
