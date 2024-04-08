@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import MenuItemQuantity from "./menuItemQuantity";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -6,7 +6,16 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 const MenuItemContent = ({ category, items }) => {
   const navigate = useNavigate();
-  const [searchTerm, setSearchTerm] = React.useState(""); //TODO: Add state to store the search term
+  const [searchTerm, setSearchTerm] = useState(""); // State to store the search term
+  const [filteredItems, setFilteredItems] = useState(items); // State to store filtered items
+
+  useEffect(() => {
+    // Filter items based on search term
+    const filtered = items.filter((item) =>
+      item.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilteredItems(filtered);
+  }, [searchTerm, items]);
 
   const handleAddItemClick = (item) => {
     navigate(`/item/${item.name}`, { state: { item } });
@@ -44,7 +53,7 @@ const MenuItemContent = ({ category, items }) => {
         </div>
       </div>
 
-      {items.map((item) => (
+      {filteredItems.map((item) => (
         <div key={item.name} className={item.className}>
           <div style={{ margin: "20px" }}>
             <img src={item.image} alt={item.name} />
@@ -59,13 +68,20 @@ const MenuItemContent = ({ category, items }) => {
             >
               {item.name}
             </h3>
-            {item.rating > 0 &&
-            <div>
-              {[...Array(5)].map((_, i) => (
-                <span key={i} className={i < item.rating ? 'star-filled' : 'star-empty'}>&#9733;</span>
-              ))}
-            </div>
-            } 
+            {item.rating > 0 && (
+              <div>
+                {[...Array(5)].map((_, i) => (
+                  <span
+                    key={i}
+                    className={
+                      i < item.rating ? "star-filled" : "star-empty"
+                    }
+                  >
+                    &#9733;
+                  </span>
+                ))}
+              </div>
+            )}
             <p style={{ margin: "0px", fontSize: "20px" }}>
               {item.description}
             </p>
@@ -99,4 +115,5 @@ const MenuItemContent = ({ category, items }) => {
     </div>
   );
 };
+
 export default MenuItemContent;
