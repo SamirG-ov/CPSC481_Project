@@ -129,7 +129,7 @@ const ItemPage = () => {
 
           <button
             type="button"
-            className="add-to-cart-button"
+            className="add-to-cart-button2"
             onClick={addToOrder}
           >
             <FontAwesomeIcon icon={faPlusCircle} />
