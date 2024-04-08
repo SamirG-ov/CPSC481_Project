@@ -649,7 +649,7 @@ export default function Menu() {
             },
             {
               name: "Pop Soda",
-              price: "$2.50",
+              price: "$2",
               className: "menu-item",
               rating: "3",
               image: Soda,
