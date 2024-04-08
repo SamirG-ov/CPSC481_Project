@@ -14,6 +14,11 @@ const ItemPage = () => {
   const location = useLocation();
   const { item } = location.state || {};
   const [quantity, setQuantity] = useState(1); // Initialize quantity with 1
+  const [specialNotes, setSpecialNotes] = useState(""); // Add state to store special notes
+
+  const handleNotesChange = (event) => {
+    setSpecialNotes(event.target.value);
+  };
 
   const handleQuantityChange = (newQuantity) => {
     setQuantity(newQuantity);
@@ -22,8 +27,9 @@ const ItemPage = () => {
   const addToOrder = () => {
     // Implement logic to add item to cart
     // For simplicity, let's assume a global variable 'cart' to store cart items
-    const cartItem = { item, quantity };
+    const cartItem = { item, quantity, specialNotes }; // Pass specialNotes here
     window.cart = window.cart ? [...window.cart, cartItem] : [cartItem];
+    navigate("/menu");
 
     // Redirect to menu page
     navigate("/menu");
@@ -81,17 +87,16 @@ const ItemPage = () => {
             Special Notes:
           </label>
           <div className="special-notes">
-            <textarea
-              // id={`special-notes-${index}`}
-              // name={`special-notes-${index}`}
-              // value={cartItem.notes || ""}
-              // onChange={(event) => handleNotesChange(event, index)}
-              rows="4"
-              cols="155"
-              placeholder="Add any special requests here."
-              style={{ fontSize: "20px" }}
-            />
-          </div>
+          <textarea
+            id="special-notes"
+            value={specialNotes}
+            onChange={handleNotesChange}
+            rows="4"
+            cols="155"
+            placeholder="Add any special requests here."
+            style={{ fontSize: "20px" }}
+          />
+        </div>
         </div>
 
         <div

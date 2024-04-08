@@ -73,10 +73,10 @@ const MenuItemContent = ({ category, items }) => {
               <p style={{ fontSize: "20px", fontWeight: "bold" }}>
                 {item.price}.00
               </p>
-              <MenuItemQuantity
+              {/* <MenuItemQuantity
                 item={item}
                 onQuantityChange={handleQuantityChange}
-              />
+              /> */}
             </div>
           </div>
           <div
