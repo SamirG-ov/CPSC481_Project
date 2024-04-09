@@ -18,7 +18,7 @@ import Footer from "./components/footer";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{ paddingBottom: "60px" }}>
       <Router>
         <Routes>
           <Route exact path="/" element={<Welcome />} />

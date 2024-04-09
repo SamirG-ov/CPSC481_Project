@@ -116,7 +116,7 @@ const ItemPage = () => {
                 color: "green",
                 border: "2px solid green",
                 boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.5)",
-                width: "210px",
+                width: "220px",
                 justifyContent: "space-evenly",
                 fontSize: "20px",
               }}
