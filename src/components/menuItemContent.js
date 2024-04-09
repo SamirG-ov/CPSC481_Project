@@ -25,9 +25,6 @@ const MenuItemContent = ({ category, items }) => {
     setSearchTerm(event.target.value);
   };
 
-  // TODO: Implement logic to add item to cart
-  const handleQuantityChange = (newQuantity) => {};
-
   return (
     <div>
       <div className="search">
@@ -73,9 +70,7 @@ const MenuItemContent = ({ category, items }) => {
                 {[...Array(5)].map((_, i) => (
                   <span
                     key={i}
-                    className={
-                      i < item.rating ? "star-filled" : "star-empty"
-                    }
+                    className={i < item.rating ? "star-filled" : "star-empty"}
                   >
                     &#9733;
                   </span>
@@ -89,15 +84,14 @@ const MenuItemContent = ({ category, items }) => {
               <p style={{ fontSize: "20px", fontWeight: "bold" }}>
                 {item.price}.00
               </p>
-              {/* <MenuItemQuantity
-                item={item}
-                onQuantityChange={handleQuantityChange}
-              /> */}
             </div>
           </div>
           <div
             style={{
-              height: "23vh",
+              height:
+                category === "Chef Specials" || category === "Secret Menu"
+                  ? "26vh"
+                  : "24vh",
               display: "flex",
               alignItems: "flex-end",
             }}

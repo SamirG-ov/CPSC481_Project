@@ -25,13 +25,12 @@
 }
 
 .menu-item {
-
   display: flex;
   flex-direction: row;
-  align-items: flex-start; /* Align items to the top */
+  align-items: center;
   justify-content: left;
   width: 100%;
-  min-height: 150px; /* Adjust as needed */
+  min-height: 150px;
   margin-bottom: 20px;
   padding: 0px 10px;
   border: 1px solid #148014;
@@ -40,7 +39,7 @@
 }
 
 .menu-item-details {
-  align-self: flex-start;
+  align-self: center;
   display: flex;
   flex-direction: column;
 }
@@ -51,7 +50,6 @@ img {
 }
 
 .add-to-cart-button {
-
   display: flex;
   align-items: center;
   justify-content: center;

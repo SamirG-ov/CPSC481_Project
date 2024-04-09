@@ -298,7 +298,7 @@ export default function Menu() {
                 name: "Nachos",
                 price: "$10",
                 className: "menu-item",
-                // //rating: "3",
+                //rating: "3",
                 image: Nachos,
                 description:
                   "Tortilla chips smothered in melted cheese, topped with jalapenos, black olives, and sour cream.",
@@ -307,7 +307,7 @@ export default function Menu() {
                 name: "Chicken Wings",
                 price: "$12",
                 className: "menu-item",
-                // //rating: "4",
+                //rating: "4",
                 image: ChickenWings,
                 description:
                   "Crispy chicken wings tossed in your choice of sauce: Buffalo, BBQ, or Teriyaki. Served with celery sticks and ranch or blue cheese dressing.",
@@ -316,7 +316,7 @@ export default function Menu() {
                 name: "Mozzarella Sticks",
                 price: "$8",
                 className: "menu-item",
-                // //rating: "3",
+                //rating: "3",
                 image: MozzarellaSticks,
                 description:
                   "Golden fried mozzarella sticks served with marinara sauce for dipping.",
@@ -325,7 +325,7 @@ export default function Menu() {
                 name: "Garlic Bread",
                 price: "$6",
                 className: "menu-item",
-                // //rating: "4",
+                //rating: "4",
                 image: GarlicBread,
                 description:
                   "Toasted French bread topped with garlic butter. Served with marinara sauce.",
@@ -342,7 +342,7 @@ export default function Menu() {
                 name: "Chicken Alfredo",
                 price: "$18",
                 className: "menu-item",
-                // //rating: "4",
+                //rating: "4",
                 image: ChickenAlfredo,
                 description:
                   "Grilled chicken breast served over fettuccine pasta tossed in creamy Alfredo sauce. Served with garlic bread.",
@@ -351,7 +351,7 @@ export default function Menu() {
                 name: "Spaghetti and Meatballs",
                 price: "$21",
                 className: "menu-item",
-                // //rating: "4",
+                //rating: "4",
                 image: Spaghetti,
                 description:
                   "Spaghetti smothered in rich marinara sauce and topped with savory meatballs. Served with garlic bread.",
@@ -360,7 +360,7 @@ export default function Menu() {
                 name: "Shrimp Scampi",
                 price: "$22",
                 className: "menu-item",
-                // //rating: "5",
+                //rating: "5",
                 image: ShrimpScampi,
                 description:
                   "Tender shrimp sautéed in garlic butter and white wine, served over a bed of linguine. Served with garlic bread.",
@@ -369,7 +369,7 @@ export default function Menu() {
                 name: "Vegetable Stir-Fry",
                 price: "$15",
                 className: "menu-item",
-                // //rating: "3",
+                //rating: "3",
                 image: VegetableStirFry,
                 description:
                   "Fresh vegetables stir-fried in a savory sauce, served over steamed rice.",
@@ -395,7 +395,7 @@ export default function Menu() {
                 name: "Clam Chowder",
                 price: "$10",
                 className: "menu-item",
-                ////rating: "4",
+                //rating: "4",
                 image: ClamChowder,
                 description:
                   "A creamy soup made with clams, potatoes, onions, and celery. Served with oyster crackers.",
@@ -815,7 +815,7 @@ export default function Menu() {
               name: "Braised lamb shank",
               price: "$30",
               className: "menu-item",
-              //rating: "5",
+              rating: "5",
               image: Lambshank,
               description:
                 "Enjoy our 'melt off the bone' lambshank served on top of a bed of rice and finished off with chopped parsley."
@@ -824,7 +824,7 @@ export default function Menu() {
               name: "Neapolitan Pizza",
               price: "$22",
               className: "menu-item",
-              //rating: "4",
+              rating: "4",
               image: Pizza,
               description:
                 "Freshly baked and prepared neapolitan pizza."
