@@ -17,6 +17,25 @@ const PaymentComplete = () => {
   }, 0);
   const tax = subTotal * 0.05;
   const totalPrice = subTotal + tax;
+  let feedBackPressed = false;
+
+  if (!feedBackPressed) {
+    setTimeout(() => {
+      checkIfFeedbackPressed();
+    }, 10000);
+  }
+
+  const handleFeedbackPressed = () => {
+    feedBackPressed = true;
+    navigate("/feedback");
+  };
+
+  const checkIfFeedbackPressed = () => {
+    if(!feedBackPressed){
+      navigate("/");
+      window.cart = [];
+    }
+  }
 
   return (
     <div>
@@ -33,14 +52,16 @@ const PaymentComplete = () => {
 
       <div className="foot">
         <div>
-        <button
-          type="button"
-          className="feedback-button"
-          onClick={() => navigate("/feedback")}
-          style={{ fontSize: "30px" }} // Adjust the font size as needed
-        >
-          Tell us how we did
-        </button>
+          <button
+            type="button"
+            className="feedback-button"
+            style={{ fontSize: "30px" }}
+            onClick={() => {
+              handleFeedbackPressed();
+            }}
+          >
+            Tell us how we did
+          </button>
         </div>
       </div>
     </div>

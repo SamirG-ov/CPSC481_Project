@@ -18,6 +18,10 @@ const TipOptions = () => {
   const tax = subTotal * 0.05;
   const totalPrice = subTotal + tax;
 
+  const setTotal = (newTotal) => {
+    window.cart.totalPrice = parseFloat(totalPrice) + parseFloat(newTotal);
+  };
+
   return (
     <div>
       <TitleNavBar title="Add a Tip" />
@@ -25,27 +29,42 @@ const TipOptions = () => {
         Total: ${totalPrice.toFixed(2)}
       </div>
       <div className="button-holder">
-        <button class="tip-button">
+        <button class="tip-button" 
+        onClick={() => {
+              setTotal((totalPrice * 0.15).toFixed(2));
+            }}>
           {(totalPrice * 0.15).toFixed(2)}
           <br></br>15%
         </button>
-        <button class="tip-button">
+        <button class="tip-button"
+          onClick={() => {
+            setTotal((totalPrice * 0.18).toFixed(2));
+          }}>
           {(totalPrice * 0.18).toFixed(2)}
           <br></br>18%
         </button>
       </div>
       <div className="button-holder">
-        <button class="tip-button">
+        <button class="tip-button"
+          onClick={() => {
+            setTotal((totalPrice * 0.20).toFixed(2));
+          }}>
           {(totalPrice * 0.2).toFixed(2)}
           <br></br>20%
         </button>
-        <button class="tip-button">
+        <button class="tip-button"
+          onClick={() => {
+            setTotal((totalPrice * 0.23).toFixed(2));
+          }}>
           {(totalPrice * 0.23).toFixed(2)}
           <br></br>23%
         </button>
       </div>
       <div class="button-holder">
-        <button class="tip-button">No Tip</button>
+        <button class="tip-button"
+                  onClick={() => {
+                    setTotal((totalPrice).toFixed(2));
+                  }}>No Tip</button>
         <button class="tip-button">
           Custom<br></br>
           <input type="text"></input>

@@ -1,22 +1,30 @@
 .tip-button {
-    margin: 10px;
-    cursor: pointer;
+  width: 300px;
+  height: 80px;
+  margin: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: gray;
+  color: white;
+  font-size: 20px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  .tip-button:active {
     background-color: white;
-    border: 2px solid black;
-    width: 300px;
-    height: 80px;
-    color: black;
+    color: gray;
   }
 
   .apply-button {
-    margin: 10px;
-    cursor: pointer;
-    
-    background-color: red;
-    border: 2px solid red;
     width: 220px;
     height: 50px;
+    margin: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: red;
     color: white;
+    font-size: 20px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
   }
 
   .footer {

@@ -29,7 +29,7 @@ const TrackOrder = () => {
     }, 1000);
 
     return () => clearInterval(intervalId);
-  }, [cartItems]);
+  }, [cartItems]); 
 
   useEffect(() => {
     const totalItems = itemTimers.length;
@@ -72,11 +72,11 @@ const TrackOrder = () => {
   return (
     <div>
       <TitleNavBar title="Track Order" />
-      {cartItems.length === 0 ? (
+      {cartItems.length === 0  || !window.isOrderPlaced ? (
         <div className="empty-cart">
           <p className="empty-message">
-            Your cart is empty.
-            <br /> Go to the menu to add items.
+            Nothing Ordered Yet.
+            <br /> Place an Order to Track It.
           </p>
           <button
             type="button"
@@ -161,7 +161,7 @@ const TrackOrder = () => {
       )}
 
       <div className="footer">
-        {cartItems.length > 0 && (
+        {cartItems.length > 0 && window.isOrderPlaced ? (
           <div>
             <p className="total-price">Total Price: ${totalPrice.toFixed(2)}</p>
             <div style={{ display: "flex", flexDirection: "row" }}>
@@ -193,7 +193,7 @@ const TrackOrder = () => {
               </button>
             </div>
           </div>
-        )}
+       ) : null}
       </div>
     </div>
   );
