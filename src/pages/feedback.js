@@ -5,13 +5,17 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import NavBar from "../components/navBar";
 import Modal from "../components/confirmationModal";
+import LasagnaImg from "../assets/lasagna.jpg";
+import ParmChicken from "../assets/parmChicken.jpg";
+import MenuItemReview from "../components/menuItemReview";
 
 const Feedback = () => {
-  const [feedback, setFeedback] = useState("");
+  // const [feedback, setFeedback] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
   const isMenuPage = location.pathname === "/menu";
   const [showModal, setShowModal] = useState(false);
+  const [nestedValue] = React.useState(0);
 
   const handleSubmit = (event) => {
     setShowModal(true);
@@ -29,6 +33,7 @@ const Feedback = () => {
 
   function CustomTabPanel(props) {
     const { children, value, index, ...other } = props;
+    
 
     return (
       <div
@@ -52,22 +57,15 @@ const Feedback = () => {
     value: PropTypes.number.isRequired,
   };
 
-  function a11yProps(index) {
-    return {
-      id: `simple-tab-${index}`,
-      "aria-controls": `simple-tabpanel-${index}`,
-    };
-  }
-
   return (
     <div>
-      <div style={{ paddingBottom: "150px" }}>
+      <div style={{ paddingBottom: "20px" }}>
         <NavBar />
       </div>
       <div
         style={{
-          maxWidth: "500px",
-          margin: "0 auto",
+          maxWidth: "600px",
+          margin: "20px auto 0",
           padding: "20px",
           border: "1px solid #ccc",
           borderRadius: "5px",
@@ -95,26 +93,34 @@ const Feedback = () => {
                 fontSize: "20px",
               }}
             >
-              Your Feedback:
+              Please Rate all the dishes :
             </label>
-            <textarea
-              id="feedback"
-              name="feedback"
-              value={feedback}
-              onChange={(e) => setFeedback(e.target.value)}
-              style={{
-                display: "block",
-                width: "95%",
-                padding: "10px",
-                marginBottom: "20px",
-                border: "1px solid #ccc",
-                borderRadius: "5px",
-                resize: "none",
-                fontSize: "20px",
-              }}
-              rows="5"
-              required
-            />
+            <CustomTabPanel value={nestedValue} index={0}>
+          <MenuItemReview
+            category="Specials"
+            items={[
+              {
+                name: "Lasagna",
+                price: "$12",
+                className: "menu-item",
+                // rating: "4",
+                image: LasagnaImg,
+                description:
+                  "Layers of pasta, seasoned ground beef, Italian sausage, fresh vegetables, Bolognese sauce, béchamel, topped with melted mozzarella and Parmesan.",
+              },
+              {
+                name: "Chicken Parmesan",
+                price: "$16",
+                className: "menu-item",
+                // rating: "4",
+                image: ParmChicken,
+                description:
+                  "Breaded chicken breast topped with marinara sauce and melted mozzarella cheese. Served with a side of spaghetti.",
+              },
+              
+            ]}
+          />
+        </CustomTabPanel>
             <button
               type="submit"
               style={{
