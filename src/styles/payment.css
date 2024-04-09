@@ -10,15 +10,6 @@
     flex-wrap: wrap;
     width: 100%;
   }
-
-  .item-title {
-    font-size: 20px;
-    font-weight: bold;
-    padding-right: 10%;
-    align-self: center;
-    color: #148014;
-    width: 100px;
-  }
   
   .item-price {
     font-size: 20px;

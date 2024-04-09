@@ -3,6 +3,11 @@ import { useNavigate } from "react-router-dom";
 
 import "../styles/orderCart.css";
 import TitleNavBar from "../components/titleNavBar";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faArrowAltCircleLeft,
+  faCreditCard,
+} from "@fortawesome/free-solid-svg-icons";
 
 const TrackOrder = () => {
   const [cartItems, setCartItems] = useState(window.cart || []);
@@ -75,9 +80,19 @@ const TrackOrder = () => {
           </p>
           <button
             type="button"
-            className="back-button"
+            className="view-cart"
+            style={{
+              backgroundColor: "white",
+              color: "green",
+              border: "2px solid green",
+              boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.5)",
+              width: "220px",
+              justifyContent: "space-evenly",
+              fontSize: "20px",
+            }}
             onClick={() => navigate("/menu")}
           >
+            <FontAwesomeIcon icon={faArrowAltCircleLeft} />
             Go Back to Menu
           </button>
         </div>
@@ -92,7 +107,22 @@ const TrackOrder = () => {
                     alt={cartItem.item.name}
                     className="item-image"
                   />
-                  <h3 className="item-title">{cartItem.item.name}</h3>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <h3 className="item-title">{cartItem.item.name}</h3>
+                    <button
+                      type="button"
+                      className="view-cart return-button"
+                      onClick={() => handleReturnItem(index)}
+                    >
+                      Return Item
+                    </button>
+                  </div>
                   <div className="return-item">
                     <p className="item-price">
                       $
@@ -100,24 +130,24 @@ const TrackOrder = () => {
                         cartItem.quantity}
                       .00
                     </p>
-                    <button
-                      type="button"
-                      className="return-button"
-                      onClick={() => handleReturnItem(index)}
-                    >
-                      Return Item
-                    </button>
                   </div>
                 </div>
-                <div className="item-details">
-                  {/* Make it disappear when progress bar is full */}
-                  <p>
+                <div style={{ width: "600px" }}>
+                  <p
+                    style={{
+                      fontSize: "20px",
+                      display: "flex",
+                      justifyContent: "space-evenly",
+                    }}
+                  >
                     <b>Estimated Time:</b> {Math.floor(itemTimers[index] / 60)}{" "}
                     minutes {itemTimers[index] % 60} seconds
                   </p>
-                  {/* Fix Progress bar algorithm*/}
                   <progress value={progress} max={itemTimers[index]} />
-                  <div className="progress-bar-labels">
+                  <div
+                    className="progress-bar-labels"
+                    style={{ fontWeight: "bold" }}
+                  >
                     <p className="label">Order Placed</p>
                     <p className="label">In the Kitchen</p>
                     <p className="label">Ready</p>
@@ -131,24 +161,37 @@ const TrackOrder = () => {
       )}
 
       <div className="footer">
-        {/* Total price */}
         {cartItems.length > 0 && (
           <div>
             <p className="total-price">Total Price: ${totalPrice.toFixed(2)}</p>
-            <button
-              type="button"
-              className="back-button"
-              onClick={() => handleBackToMenu()}
-            >
-              Go Back to Menu
-            </button>
-            <button
-              type="button"
-              className="order-button"
-              onClick={() => handlePayBill()}
-            >
-              Checkout
-            </button>
+            <div style={{ display: "flex", flexDirection: "row" }}>
+              <button
+                type="button"
+                className="view-cart"
+                style={{
+                  backgroundColor: "white",
+                  color: "green",
+                  border: "2px solid green",
+                  boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.5)",
+                  width: "220px",
+                  justifyContent: "space-evenly",
+                  fontSize: "20px",
+                }}
+                onClick={() => navigate("/menu")}
+              >
+                <FontAwesomeIcon icon={faArrowAltCircleLeft} />
+                Go Back to Menu
+              </button>
+              <button
+                type="button"
+                className="add-to-cart-button2"
+                style={{ margin: "10px" }}
+                onClick={() => handlePayBill()}
+              >
+                <FontAwesomeIcon icon={faCreditCard} />
+                Checkout
+              </button>
+            </div>
           </div>
         )}
       </div>

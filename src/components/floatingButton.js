@@ -6,6 +6,7 @@ import { faShoppingCart, faClock } from "@fortawesome/free-solid-svg-icons";
 const FloatingButton = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const orderPlaced = localStorage.getItem("orderPlaced") === "true";
 
   // Check if the current location is the Menu page
   const isMenuPage = location.pathname === "/menu";
@@ -44,14 +45,16 @@ const FloatingButton = () => {
         type="button"
         className="view-cart"
         style={{
-          backgroundColor: "white",
-          color: "green",
-          border: "2px solid green",
+          backgroundColor: !orderPlaced ? "gray" : "white",
+          cursor: !orderPlaced ? "not-allowed" : "pointer",
+          color: !orderPlaced ? "lightgray" : "green",
+          border: !orderPlaced ? "" : "2px solid green",
           boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.5)",
         }}
         onClick={() => navigate("trackOrder")}
+        disabled={!orderPlaced}
       >
-        <FontAwesomeIcon icon={faClock} />{" "}
+        <FontAwesomeIcon icon={faClock} />
         <div style={{ paddingRight: "10px" }}>Track Order</div>
       </button>
     </div>
