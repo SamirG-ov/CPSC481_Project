@@ -33,13 +33,14 @@ const PaymentComplete = () => {
 
       <div className="foot">
         <div>
-          <button
-            type="button"
-            className="feedback-button"
-            onClick={() => navigate("/feedback")}
-          >
-            Tell us how we did
-          </button>
+        <button
+          type="button"
+          className="feedback-button"
+          onClick={() => navigate("/feedback")}
+          style={{ fontSize: "30px" }} // Adjust the font size as needed
+        >
+          Tell us how we did
+        </button>
         </div>
       </div>
     </div>

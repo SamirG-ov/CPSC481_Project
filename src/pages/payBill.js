@@ -14,7 +14,7 @@ const PayBill = () => {
   return (
     <div>
       <TitleNavBar title="Pay Bill" />
-      <div style={{ "font-weight": "bold" }} className="text-holder">
+      <div style={{ "font-weight": "bold", "fontSize": "40px" }} className="text-holder">
         Accepted Forms of Payment
       </div>
       <div className="button-holder">
