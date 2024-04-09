@@ -82,7 +82,6 @@ const ItemPage = () => {
               paddingBottom: "5px",
               fontSize: "20px",
             }}
-            // htmlFor={`special-notes-${index}`}
           >
             Special Notes:
           </label>
@@ -116,7 +115,7 @@ const ItemPage = () => {
                 color: "green",
                 border: "2px solid green",
                 boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.5)",
-                width: "210px",
+                width: "220px",
                 justifyContent: "space-evenly",
                 fontSize: "20px",
               }}

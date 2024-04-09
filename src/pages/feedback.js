@@ -93,7 +93,7 @@ const Feedback = () => {
                 fontSize: "20px",
               }}
             >
-              Please Rate all the dishes :
+              Please rate all the dishes:
             </label>
             <CustomTabPanel value={nestedValue} index={0}>
           <MenuItemReview

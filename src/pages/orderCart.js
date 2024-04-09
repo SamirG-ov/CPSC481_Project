@@ -3,17 +3,24 @@ import { useNavigate } from "react-router-dom";
 
 import "../styles/orderCart.css";
 import TitleNavBar from "../components/titleNavBar";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faArrowAltCircleLeft,
+  faCheckCircle,
+  faMinus,
+  faPlus,
+  faTrashCan,
+} from "@fortawesome/free-solid-svg-icons";
 
 const OrderCart = () => {
   const navigate = useNavigate();
   const [cartItems, setCartItems] = useState(window.cart || []);
-
   const [temporaryNotes, setTemporaryNotes] = useState({}); // Store temporary notes for each item
 
-  const handleNotesChange = (event, index) => {
-    // Store temporary notes for each item as the user types
-    setTemporaryNotes({ ...temporaryNotes, [index]: event.target.value });
-  };
+  // const handleNotesChange = (event, index) => {
+  //   // Store temporary notes for each item as the user types
+  //   setTemporaryNotes({ ...temporaryNotes, [index]: event.target.value });
+  // };
 
   const saveNotes = (index) => {
     // Save the temporary notes to the cart item's specialNotes property
@@ -30,33 +37,36 @@ const OrderCart = () => {
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cartItems));
+    if (cartItems.length === 0) {
+      localStorage.setItem("orderPlaced", "false");
+    }
   }, [cartItems]);
 
-  const handleDeleteItem = (index) => {
-    const updatedCartItems = cartItems.filter((_, i) => i !== index);
-    setCartItems(updatedCartItems);
-  };
+  // const handleDeleteItem = (index) => {
+  //   const updatedCartItems = cartItems.filter((_, i) => i !== index);
+  //   setCartItems(updatedCartItems);
+  // };
 
-  const handleQuantityChange = (index, newQuantity) => {
-    const updatedCartItems = cartItems.map((item, i) => {
-      if (i === index) {
-        return { ...item, quantity: newQuantity };
-      }
-      return item;
-    });
-    setCartItems(updatedCartItems);
-  };
+  // const handleQuantityChange = (index, newQuantity) => {
+  //   const updatedCartItems = cartItems.map((item, i) => {
+  //     if (i === index) {
+  //       return { ...item, quantity: newQuantity };
+  //     }
+  //     return item;
+  //   });
+  //   setCartItems(updatedCartItems);
+  // };
 
-  const handleBackToMenu = () => {
-    navigate("/menu");
-  };
+  // const handleBackToMenu = () => {
+  //   navigate("/menu");
+  // };
 
   const handleTrackOrder = () => {
     navigate("/trackOrder");
   };
 
   return (
-    <div>
+    <div style={{ overflowX: "hidden" }}>
       <TitleNavBar title="Order Cart" />
       {cartItems.length === 0 ? (
         <div className="empty-cart">
@@ -66,9 +76,19 @@ const OrderCart = () => {
           </p>
           <button
             type="button"
-            className="back-button"
+            className="view-cart"
+            style={{
+              backgroundColor: "white",
+              color: "green",
+              border: "2px solid green",
+              boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.5)",
+              width: "220px",
+              justifyContent: "space-evenly",
+              fontSize: "20px",
+            }}
             onClick={() => navigate("/menu")}
           >
+            <FontAwesomeIcon icon={faArrowAltCircleLeft} />
             Go Back to Menu
           </button>
         </div>
@@ -91,12 +111,27 @@ const OrderCart = () => {
                 </p>
               </div>
               <div className="item-details">
-                <div className="item-quantity">
-                  <p style={{ margin: "0px" }}>Quantity</p>
+                <div className="item-quantity1">
+                  <p
+                    style={{
+                      margin: "0px",
+                      paddingRight: "10px",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    Quantity:
+                  </p>
                   <div className="quantity-control">
                     {cartItems[index].quantity === 1 ? (
                       <button
-                        className="quantity-button"
+                        style={{
+                          backgroundColor: "#148014",
+                          color: "white",
+                          borderRadius: "10px",
+                          width: "35px",
+                          height: "30px",
+                          cursor: "pointer",
+                        }}
                         type="button"
                         onClick={() => {
                           const updatedCartItems = [...cartItems];
@@ -105,11 +140,18 @@ const OrderCart = () => {
                           setCartItems(updatedCartItems);
                         }}
                       >
-                        🗑️
+                        <FontAwesomeIcon icon={faTrashCan} />
                       </button>
                     ) : (
                       <button
-                        className="quantity-button"
+                        style={{
+                          backgroundColor: "#148014",
+                          color: "white",
+                          borderRadius: "10px",
+                          width: "35px",
+                          height: "30px",
+                          cursor: "pointer",
+                        }}
                         type="button"
                         onClick={() => {
                           const updatedCartItems = [...cartItems];
@@ -117,12 +159,22 @@ const OrderCart = () => {
                           setCartItems(updatedCartItems);
                         }}
                       >
-                        -
+                        <FontAwesomeIcon icon={faMinus} />
                       </button>
                     )}
-                    <span> {cartItem.quantity} </span>
+                    <span style={{ padding: "5px" }}>
+                      {" "}
+                      {cartItem.quantity}{" "}
+                    </span>
                     <button
-                      className="quantity-button"
+                      style={{
+                        backgroundColor: "#148014",
+                        color: "white",
+                        borderRadius: "10px",
+                        width: "35px",
+                        height: "30px",
+                        cursor: "pointer",
+                      }}
                       type="button"
                       onClick={() => {
                         const updatedCartItems = [...cartItems];
@@ -130,27 +182,27 @@ const OrderCart = () => {
                         setCartItems(updatedCartItems);
                       }}
                     >
-                      +
+                      <FontAwesomeIcon icon={faPlus} />
                     </button>
                   </div>
                 </div>
 
                 {cartItem.specialNotes ? (
                   <div>
-                    <p>{cartItem.specialNotes}</p>
+                    <p style={{ border: "black solid 1px", padding: "5px" }}>
+                      {cartItem.specialNotes}
+                    </p>
                   </div>
                 ) : (
-                  <p>No Special Notes</p>
-                )}
-
-                {cartItem.specialNotes && (
-                  <button
-                    className="save-button"
-                    type="button"
-                    onClick={() => saveNotes(index)}
+                  <p
+                    style={{
+                      border: "black solid 1px",
+                      padding: "5px",
+                      color: "gray",
+                    }}
                   >
-                    Save
-                  </button>
+                    No Special Notes
+                  </p>
                 )}
               </div>
             </div>
@@ -164,20 +216,37 @@ const OrderCart = () => {
             <p className="total-price">
               Total Price: ${calculateTotalPrice(cartItems).toFixed(2)}
             </p>
-            <button
-              type="button"
-              className="back-button"
-              onClick={() => handleBackToMenu()}
-            >
-              Go Back to Menu
-            </button>
-            <button
-              type="button"
-              className="order-button"
-              onClick={() => handleTrackOrder()}
-            >
-              Place Order
-            </button>
+            <div style={{ display: "flex", flexDirection: "row" }}>
+              <button
+                type="button"
+                className="view-cart"
+                style={{
+                  backgroundColor: "white",
+                  color: "green",
+                  border: "2px solid green",
+                  boxShadow: "0px 5px 10px rgba(0, 0, 0, 0.5)",
+                  width: "220px",
+                  justifyContent: "space-evenly",
+                  fontSize: "20px",
+                }}
+                onClick={() => navigate("/menu")}
+              >
+                <FontAwesomeIcon icon={faArrowAltCircleLeft} />
+                Go Back to Menu
+              </button>
+              <button
+                type="button"
+                className="add-to-cart-button2"
+                style={{ margin: "10px" }}
+                onClick={() => {
+                  handleTrackOrder();
+                  localStorage.setItem("orderPlaced", "true");
+                }}
+              >
+                <FontAwesomeIcon icon={faCheckCircle} />
+                Place Order
+              </button>
+            </div>
           </div>
         )}
       </div>

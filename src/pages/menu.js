@@ -116,7 +116,7 @@ export default function Menu() {
   };
 
   return (
-    <div>
+    <div style={{paddingBottom: "0px"}}>
       <header style={{ display: "flex", justifyContent: "center" }}>
         <BackButton />
         <div className="logo">
