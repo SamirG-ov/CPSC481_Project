@@ -45,12 +45,12 @@ const Welcome = () => {
         <div className="buttons">
         <Link to="/menu?tab=3">
             <button type="button" className="button">
-              SHOW ME SOME RECOMMENDATIONS!
+              SHOW ME RECOMMENDATIONS!
             </button>
           </Link>
           <Link to="/menu">
             <button type="button" className="button">
-              I KNOW MY WAY AROUND!
+              ACCESS MENU!
             </button>
           </Link>
           <Link to="/assistance">
