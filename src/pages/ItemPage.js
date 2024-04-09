@@ -7,6 +7,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlusCircle,
   faArrowAltCircleLeft,
+  faSeedling,
+  faBreadSlice,
+  faCheese,
 } from "@fortawesome/free-solid-svg-icons";
 
 const ItemPage = () => {
@@ -40,6 +43,19 @@ const ItemPage = () => {
     return <div>Item not found</div>;
   }
 
+  const getIconForTag = (tag) => {
+    switch (tag) {
+      case "Vegetarian":
+        return faSeedling;
+      case "Gluten Free":
+        return faBreadSlice;
+      case "Dairy Free":
+        return faCheese;
+      default:
+        return null;
+    }
+  };
+
   return (
     <div>
       <header
@@ -58,7 +74,25 @@ const ItemPage = () => {
       </header>
       <div style={{ padding: "0px 20px 0px 20px" }}>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <h1 style={{ color: "#148014" }}>{item.name}</h1>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+            }}
+          >
+            <h1 style={{ color: "#148014", paddingRight: "5px" }}>
+              {item.name}
+            </h1>
+            {item.tags?.map((tag) => {
+              const icon = getIconForTag(tag);
+              return (
+                <span className="tag" key={tag}>
+                  {icon && <FontAwesomeIcon icon={icon} />}
+                </span>
+              );
+            })}
+          </div>
 
           <div
             style={{ marginTop: "10px", display: "flex", alignItems: "center" }}
@@ -86,16 +120,16 @@ const ItemPage = () => {
             Special Notes:
           </label>
           <div className="special-notes">
-          <textarea
-            id="special-notes"
-            value={specialNotes}
-            onChange={handleNotesChange}
-            rows="4"
-            cols="155"
-            placeholder="Add any special requests here."
-            style={{ fontSize: "20px" }}
-          />
-        </div>
+            <textarea
+              id="special-notes"
+              value={specialNotes}
+              onChange={handleNotesChange}
+              rows="4"
+              cols="155"
+              placeholder="Add any special requests here."
+              style={{ fontSize: "20px" }}
+            />
+          </div>
         </div>
 
         <div
