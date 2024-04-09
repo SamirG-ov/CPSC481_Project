@@ -16,7 +16,6 @@ const OrderCart = () => {
   const navigate = useNavigate();
   const [cartItems, setCartItems] = useState(window.cart || []);
   const [temporaryNotes, setTemporaryNotes] = useState({}); // Store temporary notes for each item
-  window.isOrderPlaced = false;
 
   // const handleNotesChange = (event, index) => {
   //   // Store temporary notes for each item as the user types
