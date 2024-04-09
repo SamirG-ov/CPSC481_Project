@@ -130,3 +130,17 @@ input[type="search"]:focus {
 .css-19kzrtu {
   padding-bottom: 0px !important;
 }
+
+.tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  background-color: green;
+  color: white;
+  border-radius: 20px;
+  height: 30px;
+  width: 30px;
+  font-size: 15px;
+  border: 1px solid black;
+}
