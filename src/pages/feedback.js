@@ -10,20 +10,22 @@ import ParmChicken from "../assets/parmChicken.jpg";
 import MenuItemReview from "../components/menuItemReview";
 
 const Feedback = () => {
-  // const [feedback, setFeedback] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
   const isMenuPage = location.pathname === "/menu";
-  const [showModal, setShowModal] = useState(false);
-  const [nestedValue] = React.useState(0);
+  const [showModal, setShowModal] = useState(false); // State to show the modal
+  const [nestedValue] = React.useState(0); // State to store the nested tab value
 
+  // Function to handle the form submission
   const handleSubmit = (event) => {
     setShowModal(true);
     event.preventDefault();
   };
 
+  // Function to handle the close event of the modal
   const handleCloseModal = () => {
     setShowModal(false);
+    // Redirect to the home page if not on the menu page
     if (!isMenuPage) {
       navigate("/");
     } else {
@@ -33,7 +35,6 @@ const Feedback = () => {
 
   function CustomTabPanel(props) {
     const { children, value, index, ...other } = props;
-    
 
     return (
       <div
@@ -96,31 +97,28 @@ const Feedback = () => {
               Please rate all the dishes:
             </label>
             <CustomTabPanel value={nestedValue} index={0}>
-          <MenuItemReview
-            category="Specials"
-            items={[
-              {
-                name: "Lasagna",
-                price: "$12",
-                className: "menu-item",
-                // rating: "4",
-                image: LasagnaImg,
-                description:
-                  "Layers of pasta, seasoned ground beef, Italian sausage, fresh vegetables, Bolognese sauce, béchamel, topped with melted mozzarella and Parmesan.",
-              },
-              {
-                name: "Chicken Parmesan",
-                price: "$16",
-                className: "menu-item",
-                // rating: "4",
-                image: ParmChicken,
-                description:
-                  "Breaded chicken breast topped with marinara sauce and melted mozzarella cheese. Served with a side of spaghetti.",
-              },
-              
-            ]}
-          />
-        </CustomTabPanel>
+              <MenuItemReview
+                category="Specials"
+                items={[
+                  {
+                    name: "Lasagna",
+                    price: "$12",
+                    className: "menu-item",
+                    image: LasagnaImg,
+                    description:
+                      "Layers of pasta, seasoned ground beef, Italian sausage, fresh vegetables, Bolognese sauce, béchamel, topped with melted mozzarella and Parmesan.",
+                  },
+                  {
+                    name: "Chicken Parmesan",
+                    price: "$16",
+                    className: "menu-item",
+                    image: ParmChicken,
+                    description:
+                      "Breaded chicken breast topped with marinara sauce and melted mozzarella cheese. Served with a side of spaghetti.",
+                  },
+                ]}
+              />
+            </CustomTabPanel>
             <button
               type="submit"
               style={{

@@ -1,16 +1,14 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import "../styles/payment.css";
 import TitleNavBar from "../components/titleNavBar";
 
 const Payment = () => {
-  const location = useLocation();
   const navigate = useNavigate();
-  const searchParams = new URLSearchParams(location.search);
-  const [cartItems] = useState(window.cart);
+  const [cartItems] = useState(window.cart); // State to store the cart items
 
+  // Calculate the total price of the cart
   const subTotal = cartItems
     ? cartItems.reduce((total, cartItem) => {
         const menuItem = cartItem.item;
@@ -32,16 +30,15 @@ const Payment = () => {
         <h3 className="item-quantity">Quantity</h3>
       </div>
       <ul style={{ paddingLeft: "0px" }}>
-        {cartItems &&
-          cartItems.map((cartItem, index) => (
-            <div className="cart-item" key={cartItem.item.id}>
-              <div className="item">
-                <h3 className="item-title">{cartItem.item.name}</h3>
-                <p className="item-price">{cartItem.item.price}.00</p>
-                <p className="item-quantity">{cartItems[index].quantity}</p>
-              </div>
+        {cartItems?.map((cartItem, index) => (
+          <div className="cart-item" key={cartItem.item.id}>
+            <div className="item">
+              <h3 className="item-title">{cartItem.item.name}</h3>
+              <p className="item-price">{cartItem.item.price}.00</p>
+              <p className="item-quantity">{cartItems[index].quantity}</p>
             </div>
-          ))}
+          </div>
+        ))}
       </ul>
 
       <div className="footer">

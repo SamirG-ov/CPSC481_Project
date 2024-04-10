@@ -1,5 +1,6 @@
 import BackButton from "./backButton";
 
+// NavBar component with title
 const TitleNavBar = ({ title }) => {
   return (
     <header style={{ display: "flex", justifyContent: "center" }}>

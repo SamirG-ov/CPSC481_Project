@@ -8,6 +8,7 @@ const Welcome = () => {
   let meal;
   let time;
 
+  // Determine the meal time based on the current hour
   if (currentHour < 10 || currentHour >= 22) {
     meal = "Closed";
     time = "10:00 pm — 10:00 am";
@@ -19,6 +20,7 @@ const Welcome = () => {
     time = "6:00 pm — 10:00 pm";
   }
 
+  // Reset the order placed flag
   window.isOrderPlaced = false;
 
   return (

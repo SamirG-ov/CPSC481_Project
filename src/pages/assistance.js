@@ -5,17 +5,20 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import Modal from "../components/confirmationModal";
 
 const Assistance = () => {
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false); // State to show the modal
 
+  // Function to handle the click event of the cancel button
   const handleCancelClick = () => {
     setShowModal(true);
   };
 
+  // Function to handle the confirm event of the modal
   const handleConfirmCancel = () => {
     setShowModal(false);
     window.history.back();
   };
 
+  // Function to handle the dismiss event of the modal
   const handleDismissModal = () => {
     setShowModal(false);
   };

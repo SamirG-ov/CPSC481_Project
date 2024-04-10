@@ -86,27 +86,29 @@ function a11yProps(index) {
 
 export default function Menu() {
   const location = useLocation();
-  const params = new URLSearchParams(location.search);
+  const params = new URLSearchParams(location.search); // Get the query parameters from the URL
   const initialTab = parseInt(params.get("tab")) || 0; // Parse the tab parameter from the URL
 
-  const [value, setValue] = React.useState(initialTab);
-  const [nestedValue, setNestedValue] = React.useState(0);
-  const [nestedValueItemTwo, setNestedValueItemTwo] = React.useState(0);
+  const [value, setValue] = React.useState(initialTab); // State to store the tab value
+  const [nestedValue, setNestedValue] = React.useState(0); // State to store the nested tab value
+  const [nestedValueItemTwo, setNestedValueItemTwo] = React.useState(0); // State to store the nested tab value
 
-  const [nestedValueItemThree, setNestedValueItemThree] = React.useState(0);
+  const [nestedValueItemThree, setNestedValueItemThree] = React.useState(0); // State to store the nested tab value
 
+  // Function to handle the tab change
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
+  // Function to handle the nested tab change
   const handleNestedChange = (event, newValue) => {
     setNestedValue(newValue);
   };
-
+  // Function to handle the nested tab change
   const handleNestedChangeItemTwo = (event, newValue) => {
     setNestedValueItemTwo(newValue);
   };
 
+  // Function to handle the nested tab change
   const handleNestedChangeItemThree = (event, newValue) => {
     setNestedValueItemThree(newValue);
   };

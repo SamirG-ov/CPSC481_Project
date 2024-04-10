@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 import "../styles/orderCart.css";
 import TitleNavBar from "../components/titleNavBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,12 +9,13 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const TrackOrder = () => {
-  const [cartItems, setCartItems] = useState(window.cart || []);
-  const [itemTimers, setItemTimers] = useState([]);
-  const [progress, setProgress] = useState(0);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [cartItems, setCartItems] = useState(window.cart || []); // State to store the cart items
+  const [itemTimers, setItemTimers] = useState([]); // State to store the timers for each item
+  const [progress, setProgress] = useState(0); // State to store the progress of the order
+  const [currentIndex, setCurrentIndex] = useState(0); // State to store the current index of the order
   const navigate = useNavigate();
 
+  // Update the cart items in local storage when the cart items change
   useEffect(() => {
     const timers = cartItems.map(
       () => Math.floor(Math.random() * (300 - 120 + 1)) + 120
@@ -29,8 +29,9 @@ const TrackOrder = () => {
     }, 1000);
 
     return () => clearInterval(intervalId);
-  }, [cartItems]); 
+  }, [cartItems]);
 
+  // Update the progress of the order when the current index changes
   useEffect(() => {
     const totalItems = itemTimers.length;
     const totalSections = totalItems * 4;
@@ -40,6 +41,7 @@ const TrackOrder = () => {
     setProgress(progress);
   }, [currentIndex, itemTimers.length]);
 
+  // Update the current index when the timer for the current item is less than 25% of the total time
   useEffect(() => {
     const currentTimer = itemTimers[currentIndex];
     if (currentTimer <= itemTimers[currentIndex] / 4) {
@@ -54,14 +56,12 @@ const TrackOrder = () => {
     return total + itemPrice * cartItem.quantity;
   }, 0);
 
-  const handleBackToMenu = () => {
-    navigate("/menu");
-  };
-
+  // Function to handle the pay bill button click
   const handlePayBill = () => {
     navigate(`/payment?totalPrice=${totalPrice}`);
   };
 
+  // Function to handle the return item button click
   const handleReturnItem = (index) => {
     const updatedCartItems = [...cartItems];
     cartItems.splice(index);
@@ -72,7 +72,7 @@ const TrackOrder = () => {
   return (
     <div>
       <TitleNavBar title="Track Order" />
-      {cartItems.length === 0  || !window.isOrderPlaced ? (
+      {cartItems.length === 0 || !window.isOrderPlaced ? (
         <div className="empty-cart">
           <p className="empty-message">
             Nothing Ordered Yet.
@@ -193,7 +193,7 @@ const TrackOrder = () => {
               </button>
             </div>
           </div>
-       ) : null}
+        ) : null}
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom";
 import BackButton from "./backButton";
 
+// NavBar component
 const NavBar = () => {
   const location = useLocation();
   const isMenuPage = location.pathname === "/menu";

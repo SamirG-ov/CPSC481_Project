@@ -7,7 +7,8 @@ import NavBar from "../components/navBar";
 
 const CardPay = () => {
   const navigate = useNavigate();
-  const [cartItems] = useState(window.cart);
+  const [cartItems] = useState(window.cart); // State to store the cart items
+  // Calculate the total price of the cart
   const subTotal = cartItems.reduce((total, cartItem) => {
     const menuItem = cartItem.item;
     const itemPrice = parseFloat(menuItem.price.replace("$", ""));
@@ -17,6 +18,7 @@ const CardPay = () => {
   let totalPrice = subTotal + tax;
   totalPrice = window.cart.totalPrice;
 
+  // Redirect to the payment complete page after 5 seconds
   setTimeout(() => {
     navigate("/paymentComplete");
   }, 5000);

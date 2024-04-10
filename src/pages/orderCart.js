@@ -14,27 +14,9 @@ import {
 
 const OrderCart = () => {
   const navigate = useNavigate();
-  const [cartItems, setCartItems] = useState(window.cart || []);
-  const [temporaryNotes, setTemporaryNotes] = useState({}); // Store temporary notes for each item
+  const [cartItems, setCartItems] = useState(window.cart || []); // State to store the cart items
 
-  // const handleNotesChange = (event, index) => {
-  //   // Store temporary notes for each item as the user types
-  //   setTemporaryNotes({ ...temporaryNotes, [index]: event.target.value });
-  // };
-
-  const saveNotes = (index) => {
-    // Save the temporary notes to the cart item's specialNotes property
-    const updatedCartItems = cartItems.map((item, i) => {
-      if (i === index) {
-        return { ...item, specialNotes: temporaryNotes[index] };
-      }
-      return item;
-    });
-    setCartItems(updatedCartItems);
-    // Clear temporary notes after saving
-    setTemporaryNotes({ ...temporaryNotes, [index]: "" });
-  };
-
+  // Update the cart items in local storage when the cart items change
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cartItems));
     if (cartItems.length === 0) {
@@ -42,25 +24,7 @@ const OrderCart = () => {
     }
   }, [cartItems]);
 
-  // const handleDeleteItem = (index) => {
-  //   const updatedCartItems = cartItems.filter((_, i) => i !== index);
-  //   setCartItems(updatedCartItems);
-  // };
-
-  // const handleQuantityChange = (index, newQuantity) => {
-  //   const updatedCartItems = cartItems.map((item, i) => {
-  //     if (i === index) {
-  //       return { ...item, quantity: newQuantity };
-  //     }
-  //     return item;
-  //   });
-  //   setCartItems(updatedCartItems);
-  // };
-
-  // const handleBackToMenu = () => {
-  //   navigate("/menu");
-  // };
-
+  // Function to handle the track order button click
   const handleTrackOrder = () => {
     window.isOrderPlaced = true;
     navigate("/trackOrder");
@@ -261,6 +225,7 @@ const OrderCart = () => {
   );
 };
 
+// Function to calculate the total price of the cart items
 const calculateTotalPrice = (cartItems) => {
   return cartItems.reduce((total, cartItem) => {
     const menuItem = cartItem.item;

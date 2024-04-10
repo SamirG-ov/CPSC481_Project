@@ -14,11 +14,13 @@ function MenuItemQuantity({ item, onQuantityChange }) {
     }
   }, [isMenuPage]);
 
+  // Function to increase the quantity
   const increaseQuantity = () => {
     setQuantity(quantity + 1);
     onQuantityChange(quantity + 1);
   };
 
+  // Function to decrease the quantity
   const decreaseQuantity = () => {
     if (quantity > 1 && !isMenuPage) {
       setQuantity(quantity - 1);
@@ -29,6 +31,7 @@ function MenuItemQuantity({ item, onQuantityChange }) {
     }
   };
 
+  // Style for the quantity buttons
   const buttonStyle = {
     backgroundColor: "#148014",
     color: "white",

@@ -12,15 +12,18 @@ const AssistanceButton = () => {
   const isNotAssistancePage = location.pathname !== "/assistance";
   const isNotWelcomePage = location.pathname !== "/";
 
+  // Function to handle the click event of the assistance button
   const handleAssistanceClick = () => {
     setShowModal(true);
   };
 
+  // Function to handle the confirm event of the modal
   const handleConfirmCancel = () => {
     setShowModal(false);
     navigate("/assistance");
   };
 
+  // Function to handle the dismiss event of the modal
   const handleDismissModal = () => {
     setShowModal(false);
   };

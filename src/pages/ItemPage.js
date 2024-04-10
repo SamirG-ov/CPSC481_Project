@@ -15,14 +15,15 @@ import {
 const ItemPage = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { item } = location.state || {};
+  const { item } = location.state || {}; // Get item from location state
   const [quantity, setQuantity] = useState(1); // Initialize quantity with 1
   const [specialNotes, setSpecialNotes] = useState(""); // Add state to store special notes
 
+  // Function to handle the special notes change
   const handleNotesChange = (event) => {
     setSpecialNotes(event.target.value);
   };
-
+  // Function to handle the quantity change
   const handleQuantityChange = (newQuantity) => {
     setQuantity(newQuantity);
   };
@@ -43,6 +44,7 @@ const ItemPage = () => {
     return <div>Item not found</div>;
   }
 
+  // Function to get icon for dietary restrictions tag
   const getIconForTag = (tag) => {
     switch (tag) {
       case "Vegetarian":

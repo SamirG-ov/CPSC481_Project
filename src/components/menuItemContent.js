@@ -21,14 +21,17 @@ const MenuItemContent = ({ category, items }) => {
     setFilteredItems(filtered);
   }, [searchTerm, items]);
 
+  // Function to handle the click event of the add to cart button
   const handleAddItemClick = (item) => {
     navigate(`/item/${item.name}`, { state: { item } });
   };
 
+  // Function to handle the change event of the search input
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
   };
 
+  // Function to get the icon for the dietary restrictions tag
   const getIconForTag = (tag) => {
     switch (tag) {
       case "Vegetarian":
