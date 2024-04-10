@@ -2,7 +2,7 @@
 
 Introducing our innovative ordering restaurant system, revolutionizing the dining experience for all types of customers. Our platform helps users to effortlessly browse through the many sections of the menu, place, return, and track orders, securely process payments, and provide meaningful feedback from the convenience of a handheld device. If you are looking for a new ordering system for your restaurant or bar, where clients can seamlessly interact with the menu and order directly from their seats, look no further!
 
-## Group 9:
+## Group 6:
 
 - Lauraine Baffot (30086699), lauraine.baffot@ucalgary.ca
 - Samir Gulahmadov (30078572), samir.gulahmadov1@ucalgary.ca
