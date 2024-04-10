@@ -19,6 +19,8 @@ const Welcome = () => {
     time = "6:00 pm — 10:00 pm";
   }
 
+  window.isOrderPlaced = false;
+
   return (
     <>
       <div className="welcome-page">

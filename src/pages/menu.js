@@ -88,7 +88,6 @@ export default function Menu() {
   const location = useLocation();
   const params = new URLSearchParams(location.search);
   const initialTab = parseInt(params.get("tab")) || 0; // Parse the tab parameter from the URL
-  window.isOrderPlaced = false;
 
   const [value, setValue] = React.useState(initialTab);
   const [nestedValue, setNestedValue] = React.useState(0);
