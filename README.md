@@ -43,7 +43,7 @@ npm start
 Runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-Or you can find our app deployed on this website: [https://newdeployment-liard.vercel.app/](https://newdeployment-liard.vercel.app/)
+Or you can find our app deployed on this website: https://newdeploy2.vercel.app/
 
 ## Project Information
 
