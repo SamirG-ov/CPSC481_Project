@@ -14,8 +14,8 @@ const PaymentComplete = () => {
     return total + itemPrice * cartItem.quantity;
   }, 0);
   const tax = subTotal * 0.05;
-  let totalPrice = subTotal + tax;
-  totalPrice = window.cart.totalPrice; // Total price of the cart
+  const totalPrice = subTotal + tax;
+  // totalPrice = window.cart.totalPrice; // Total price of the cart
   let feedBackPressed = false;
 
   // Redirect to the payment complete page after 10 seconds
