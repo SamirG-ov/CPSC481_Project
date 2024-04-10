@@ -14,7 +14,7 @@ const CardPay = () => {
     return total + itemPrice * cartItem.quantity;
   }, 0);
   const tax = subTotal * 0.05;
-  const totalPrice = window.cart.totalPrice;
+  const totalPrice = subTotal + tax;
 
   setTimeout(() => {
     navigate("/paymentComplete");
@@ -24,7 +24,7 @@ const CardPay = () => {
     <div style={{ backgroundColor: "f8f9fa" }}>
       <NavBar />
       <div>
-        <p className="total-price">Total: ${totalPrice}</p>
+        <p className="total-price">Total: ${totalPrice.toFixed(2)}</p>
       </div>
 
       <div className="textHold">

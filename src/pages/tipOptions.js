@@ -25,46 +25,61 @@ const TipOptions = () => {
   return (
     <div>
       <TitleNavBar title="Add a Tip" />
-      <div style={{ "font-weight": "bold", "fontSize": "30px" }} className="text-holder">
+      <div
+        style={{ "font-weight": "bold", fontSize: "30px" }}
+        className="text-holder"
+      >
         Total: ${totalPrice.toFixed(2)}
       </div>
       <div className="button-holder">
-        <button class="tip-button" 
-        onClick={() => {
-              setTotal((totalPrice * 0.15).toFixed(2));
-            }}>
+        <button
+          class="tip-button"
+          onClick={() => {
+            setTotal((totalPrice * 0.15).toFixed(2));
+          }}
+        >
           {(totalPrice * 0.15).toFixed(2)}
           <br></br>15%
         </button>
-        <button class="tip-button"
+        <button
+          class="tip-button"
           onClick={() => {
             setTotal((totalPrice * 0.18).toFixed(2));
-          }}>
+          }}
+        >
           {(totalPrice * 0.18).toFixed(2)}
           <br></br>18%
         </button>
       </div>
       <div className="button-holder">
-        <button class="tip-button"
+        <button
+          class="tip-button"
           onClick={() => {
-            setTotal((totalPrice * 0.20).toFixed(2));
-          }}>
+            setTotal((totalPrice * 0.2).toFixed(2));
+          }}
+        >
           {(totalPrice * 0.2).toFixed(2)}
           <br></br>20%
         </button>
-        <button class="tip-button"
+        <button
+          class="tip-button"
           onClick={() => {
             setTotal((totalPrice * 0.23).toFixed(2));
-          }}>
+          }}
+        >
           {(totalPrice * 0.23).toFixed(2)}
           <br></br>23%
         </button>
       </div>
       <div class="button-holder">
-        <button class="tip-button"
-                  onClick={() => {
-                    setTotal((totalPrice).toFixed(2));
-                  }}>No Tip</button>
+        <button
+          class="tip-button"
+          onClick={() => {
+            setTotal(totalPrice.toFixed(2));
+          }}
+        >
+          No Tip
+        </button>
         <button class="tip-button">
           Custom<br></br>
           <input type="text"></input>
@@ -73,7 +88,7 @@ const TipOptions = () => {
       <div class="footer">
         <button
           type="button"
-          className="apply-button"
+          className="view-cart"
           onClick={() => navigate("/cardPay")}
         >
           Apply
