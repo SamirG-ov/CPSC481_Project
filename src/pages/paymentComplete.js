@@ -43,7 +43,7 @@ const PaymentComplete = () => {
     <div>
       <NavBar />
       <div>
-        <p className="total-price">Total: ${totalPrice.toFixed(2)}</p>
+        <p className="total-price">Total: ${totalPrice}</p>
       </div>
 
       <div className="textHolder">
