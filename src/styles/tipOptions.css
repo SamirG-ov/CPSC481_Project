@@ -9,10 +9,12 @@
   font-size: 20px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
   }
-
+  .tip-button:focus,
   .tip-button:active {
-    background-color: white;
-    color: gray;
+    background-color: rgb(223, 223, 223); /* Change to a lighter shade of gray */
+    color: black; /* Change to black or another darker color */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5); /* Adjust shadow for a pressed effect */
+    border-color: black; /* Change border color to indicate selection */
   }
 
   .apply-button {

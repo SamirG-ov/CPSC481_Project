@@ -25,7 +25,7 @@ const TipOptions = () => {
   return (
     <div>
       <TitleNavBar title="Add a Tip" />
-      <div style={{ "font-weight": "bold" }} className="text-holder">
+      <div style={{ "font-weight": "bold", "fontSize": "30px" }} className="text-holder">
         Total: ${totalPrice.toFixed(2)}
       </div>
       <div className="button-holder">
