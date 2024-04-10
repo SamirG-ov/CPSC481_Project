@@ -1,29 +1,21 @@
 .displayLogo {
-    text-align: center;
-    justify-content: center;
-  }
+  text-align: center;
+  justify-content: center;
+}
 
 .mainLogo {
-    text-align: center;
-    justify-content: center;
-  }
+  text-align: center;
+  justify-content: center;
+}
 
-  .total-price {
-    display: flex;
-    justify-content: center;
-    margin: 20px;
-    font-size: 20px;
-    font-weight: bold;
-  }
+.payText {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  font-size: 50px;
+}
 
-  .payText {
-    display: flex;
-    justify-content: center;
-    margin: 10px;
-    font-size: 50px;
-  }
-
-  .textHolder {
-    padding-left: 30%;
-    padding-right:30%
-  }
+.textHolder {
+  padding-left: 30%;
+  padding-right: 30%;
+}

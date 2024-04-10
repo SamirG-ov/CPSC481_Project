@@ -47,17 +47,34 @@ const Payment = () => {
       <div className="footer">
         {/* Total price */}
         {cartItems && cartItems.length > 0 && (
-          <div>
-            <p className="total-price">Subtotal: ${subTotal}.00</p>
-            <p className="total-price">Tax (GST)(5%): ${tax.toFixed(2)}</p>
-            <p className="total-price">Total Price: ${totalPrice.toFixed(2)}</p>
-            <button
-              type="button"
-              className="pay-button"
-              onClick={() => navigate("/payBill")}
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-evenly",
+              flexDirection: "column",
+              width: "100%",
+            }}
+          >
+            <p className="total-price">Subtotal: CA${subTotal}.00</p>
+            <p className="total-price">Tax (GST)(5%): CA${tax.toFixed(2)}</p>
+            <p className="total-price">
+              Total Price: CA${totalPrice.toFixed(2)}
+            </p>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+              }}
             >
-              Pay Bill
-            </button>
+              <button
+                type="button"
+                className="view-cart"
+                style={{ margin: "20px", width: "250px" }}
+                onClick={() => navigate("/payBill")}
+              >
+                Pay Bill
+              </button>
+            </div>
           </div>
         )}
       </div>
