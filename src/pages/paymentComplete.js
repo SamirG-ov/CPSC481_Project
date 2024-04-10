@@ -16,7 +16,8 @@ const PaymentComplete = () => {
     return total + itemPrice * cartItem.quantity;
   }, 0);
   const tax = subTotal * 0.05;
-  const totalPrice = subTotal + tax;
+  let totalPrice = subTotal + tax;
+  totalPrice = window.cart.totalPrice;
   let feedBackPressed = false;
 
   if (!feedBackPressed) {
@@ -31,11 +32,11 @@ const PaymentComplete = () => {
   };
 
   const checkIfFeedbackPressed = () => {
-    if(!feedBackPressed){
+    if (!feedBackPressed) {
       navigate("/");
       window.cart = [];
     }
-  }
+  };
 
   return (
     <div>

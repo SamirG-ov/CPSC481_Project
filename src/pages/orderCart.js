@@ -190,7 +190,13 @@ const OrderCart = () => {
 
                 {cartItem.specialNotes ? (
                   <div>
-                    <p style={{ border: "black solid 1px", padding: "5px" }}>
+                    <p
+                      style={{
+                        border: "black solid 1px",
+                        padding: "5px",
+                        width: "170px",
+                      }}
+                    >
                       {cartItem.specialNotes}
                     </p>
                   </div>

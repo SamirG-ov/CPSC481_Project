@@ -14,7 +14,8 @@ const CardPay = () => {
     return total + itemPrice * cartItem.quantity;
   }, 0);
   const tax = subTotal * 0.05;
-  const totalPrice = subTotal + tax;
+  let totalPrice = subTotal + tax;
+  totalPrice = window.cart.totalPrice;
 
   setTimeout(() => {
     navigate("/paymentComplete");
